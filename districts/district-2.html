@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>District 2 — LiBRE District Statistics</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1F2937;background:transparent;line-height:1.6;padding:8px}
+</style>
+</head>
+<body>
+
+<div role="region" aria-label="District 2 housing statistics 2020-2024" style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;overflow:hidden;">
+  <div style="padding:14px 18px 10px;border-bottom:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center;">
+    <h3 style="font-size:16px;font-weight:700;color:#276ADB;margin:0;">District 2</h3>
+    <span style="font-size:11px;color:#9CA3AF;">2020-2024</span>
+  </div>
+  <div style="padding:14px 18px 16px;">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#276ADB;padding:4px 0;" role="heading" aria-level="4">All renters</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f3f4f6;">
+      <div>
+        <div style="font-size:12px;color:#6B7280;">Renter households</div>
+        <div role="text" aria-label="18,773 renter households in District 2" style="font-size:18px;font-weight:700;">18,773</div>
+        <div role="text" aria-label="decreased  -17 from 18,790" style="font-size:10px;font-weight:600;#1D9E75">▼ -17 from 18,790</div>
+      </div>
+      <div style="width:100px;height:36px;position:relative;"><canvas id="d2rb" role="img" aria-label="District 2 rent burden trend sparkline"></canvas></div>
+    </div>
+    <div style="padding:6px 0;border-bottom:1px solid #f3f4f6;">
+      <div style="font-size:12px;color:#6B7280;">Cost burdened (30%+)</div>
+      <div role="text" aria-label="56.3% cost burdened" style="font-size:18px;font-weight:700;">56.3%</div>
+      <div role="text" aria-label="▲ 0.2pp worsened from 56.2%" style="font-size:10px;font-weight:600;color:#E24B4A;">▲ 0.2pp worsened from 56.2%</div>
+    </div>
+    <div style="padding:6px 0;border-bottom:1px solid #f3f4f6;">
+      <div style="font-size:12px;color:#6B7280;">Severely burdened (50%+)</div>
+      <div role="text" aria-label="24.6% severely burdened" style="font-size:18px;font-weight:700;">24.6%</div>
+      <div role="text" aria-label="▼ 6.2pp improved from 30.8%" style="font-size:10px;font-weight:600;color:#1D9E75;">▼ 6.2pp improved from 30.8%</div>
+    </div>
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7B4EAF;padding:8px 0 4px;margin-top:4px;" role="heading" aria-level="4">65+ Seniors</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f3f4f6;">
+      <div>
+        <div style="font-size:12px;color:#6B7280;">Senior renter HH</div>
+        <div role="text" aria-label="1,445 senior households" style="font-size:18px;font-weight:700;">1,445</div>
+        <div role="text" aria-label="increased  +78 from 1,367" style="font-size:10px;font-weight:600;color:#E24B4A;">▲ +78 from 1,367</div>
+      </div>
+      <div style="width:100px;height:36px;position:relative;"><canvas id="d2sr" role="img" aria-label="District 2 senior burden sparkline"></canvas></div>
+    </div>
+    <div style="padding:6px 0;border-bottom:1px solid #f3f4f6;">
+      <div style="font-size:12px;color:#6B7280;">Burdened (30%+)</div>
+      <div role="text" aria-label="74.2% of seniors burdened" style="font-size:18px;font-weight:700;">74.2%</div>
+      <div role="text" aria-label="▼ 4.8pp improved from 79.1%" style="font-size:10px;font-weight:600;color:#1D9E75;">▼ 4.8pp improved from 79.1%</div>
+    </div>
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#F7BA21;padding:8px 0 4px;margin-top:4px;" role="heading" aria-level="4">Low-income (&lt;$35K)</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f3f4f6;">
+      <div>
+        <div style="font-size:12px;color:#6B7280;">Low-income HH</div>
+        <div role="text" aria-label="4,356 low-income households" style="font-size:18px;font-weight:700;">4,356</div>
+        <div role="text" aria-label="decreased  -4,358 from 8,714" style="font-size:10px;font-weight:600;color:#1D9E75;">▼ -4,358 from 8,714</div>
+      </div>
+      <div style="width:100px;height:36px;position:relative;"><canvas id="d2li" role="img" aria-label="District 2 low-income severe burden sparkline"></canvas></div>
+    </div>
+    <div style="padding:6px 0;">
+      <div style="font-size:12px;color:#6B7280;">Severely burdened (50%+)</div>
+      <div role="text" aria-label="75.6% severely burdened" style="font-size:18px;font-weight:700;">75.6%</div>
+      <div role="text" aria-label="▲ 11.8pp worsened from 63.8%" style="font-size:10px;font-weight:600;color:#E24B4A;">▲ 11.8pp worsened from 63.8%</div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  var lb=["14","15","16","17","18","19","20","21","22","23","24"];
+  function sp(id,data,color){new Chart(document.getElementById(id),{type:'line',data:{labels:lb,datasets:[{data:data,borderColor:color,borderWidth:1.5,pointRadius:0,tension:0.4,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:true,callbacks:{label:function(c){return c.parsed.y.toFixed(1)+'%'}}}},scales:{x:{display:false},y:{display:false}}}});};
+  sp('d2rb',[56.2, 55.0, 52.7, 53.2, 54.0, 54.1, 53.8, 55.8, 56.1, 55.0, 56.3],'#276ADB');
+  sp('d2sr',[79.1, 80.1, 81.2, 80.8, 79.2, 76.0, 74.0, 71.5, 72.9, 72.2, 74.2],'#7B4EAF');
+  sp('d2li',[63.8, 61.8, 63.5, 66.7, 67.2, 67.7, 72.3, 71.4, 71.0, 75.4, 75.6],'#F7BA21');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Renter household counts — 10-year citywide trend — LiBRE District Statistics</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1F2937;background:transparent;line-height:1.6;padding:8px}
+</style>
+</head>
+<body>
+
+<div role="figure" aria-label="Total renters grew from 87,263 to 99,965. Burdened grew from 48,359 to 53,104." style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:20px;">
+  <h3 style="font-size:15px;font-weight:700;color:#1F2937;margin:0 0 3px;">Renter household counts — 10-year citywide trend</h3>
+  <p style="font-size:12px;color:#9CA3AF;margin:0 0 10px;">Total renter households vs. cost-burdened households (ACS B25070)</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px;font-size:12px;color:#6B7280;"><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#276ADB;display:inline-block;" aria-hidden="true"></span>Total renter HH</span><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#D2333F;display:inline-block;" aria-hidden="true"></span>Cost burdened (30%+)</span></div>
+  <div style="position:relative;width:100%;height:280px;">
+    <canvas id="c03" role="img" aria-label="Total renters grew from 87,263 to 99,965. Burdened grew from 48,359 to 53,104."></canvas>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>(function(){ var L=["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],t=[87263,87836,87832,88132,89064,89642,98870,100458,100410,100690,99965],b=[48359,48281,46911,46271,46906,47148,51831,53470,53195,53802,53104];
+new Chart(document.getElementById('c03'),{type:'line',data:{labels:L,datasets:[
+{label:'Total renter HH',data:t,borderColor:'#276ADB',backgroundColor:'rgba(39,106,219,0.08)',fill:true,tension:0.3,pointRadius:2,borderWidth:2},
+{label:'Cost burdened (30%+)',data:b,borderColor:'#D2333F',backgroundColor:'rgba(210,51,63,0.06)',fill:true,tension:0.3,pointRadius:2,borderWidth:2}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+Math.round(c.parsed.y).toLocaleString()}}}},scales:{x:{ticks:{color:'rgba(0,0,0,0.45)',font:{size:11}},grid:{display:false}},y:{ticks:{color:'rgba(0,0,0,0.45)',font:{size:11},callback:function(v){return(v/1000).toFixed(0)+'K'}},grid:{color:'rgba(0,0,0,0.06)'}}}}}); })();</script>
+</body>
+</html>

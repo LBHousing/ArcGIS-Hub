@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Low-income household counts — the displacement signal — LiBRE District Statistics</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1F2937;background:transparent;line-height:1.6;padding:8px}
+</style>
+</head>
+<body>
+
+<div role="figure" aria-label="Low-income total dropped from 41,082 to 25,917. Severe dropped from 24,443 to 18,359." style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:20px;">
+  <h3 style="font-size:15px;font-weight:700;color:#1F2937;margin:0 0 3px;">Low-income household counts — the displacement signal</h3>
+  <p style="font-size:12px;color:#9CA3AF;margin:0 0 10px;">Declining count = low-income households leaving Long Beach (ACS B25074)</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px;font-size:12px;color:#6B7280;"><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#F7BA21;display:inline-block;" aria-hidden="true"></span>Total low-income HH</span><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#D2333F;display:inline-block;" aria-hidden="true"></span>Severely burdened (50%+)</span></div>
+  <div style="position:relative;width:100%;height:280px;">
+    <canvas id="c07" role="img" aria-label="Low-income total dropped from 41,082 to 25,917. Severe dropped from 24,443 to 18,359."></canvas>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>(function(){ var L=["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],t=[41082,40969,39319,36557,35185,33304,34792,32594,29775,27648,25917],s=[24443,24070,23544,22259,21600,20681,22484,22003,20389,19385,18359];
+new Chart(document.getElementById('c07'),{type:'line',data:{labels:L,datasets:[
+{label:'Total low-income HH',data:t,borderColor:'#F7BA21',backgroundColor:'rgba(247,186,33,0.1)',fill:true,tension:0.3,pointRadius:2,borderWidth:2.5},
+{label:'Severely burdened (50%+)',data:s,borderColor:'#D2333F',backgroundColor:'rgba(210,51,63,0.06)',fill:true,tension:0.3,pointRadius:2,borderWidth:2}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+Math.round(c.parsed.y).toLocaleString()}}}},scales:{x:{ticks:{color:'rgba(0,0,0,0.45)',font:{size:11}},grid:{display:false}},y:{ticks:{color:'rgba(0,0,0,0.45)',font:{size:11},callback:function(v){return(v/1000).toFixed(0)+'K'}},grid:{color:'rgba(0,0,0,0.06)'}}}}}); })();</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>65+ seniors — burden by district — LiBRE District Statistics</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1F2937;background:transparent;line-height:1.6;padding:8px}
+</style>
+</head>
+<body>
+
+<div role="figure" aria-label="District comparison: D1 67.8%, D2 74.2%, D3 59.2%, D4 60.1%, D5 61.3%, D6 67.8%, D7 52.7%, D8 60.8%, D9 59.4%. Average 63.6%." style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:20px;">
+  <h3 style="font-size:15px;font-weight:700;color:#1F2937;margin:0 0 3px;">65+ seniors — burden by district</h3>
+  <p style="font-size:12px;color:#9CA3AF;margin:0 0 10px;">2020-2024 | Districts above citywide average (63.6%) shown in red</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px;font-size:12px;color:#6B7280;"><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#7B4EAF;display:inline-block;" aria-hidden="true"></span>At or below average</span><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#D2333F;display:inline-block;" aria-hidden="true"></span>Above average</span></div>
+  <div style="position:relative;width:100%;height:280px;">
+    <canvas id="bse" role="img" aria-label="District comparison: D1 67.8%, D2 74.2%, D3 59.2%, D4 60.1%, D5 61.3%, D6 67.8%, D7 52.7%, D8 60.8%, D9 59.4%. Average 63.6%."></canvas>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>(function(){ var avg=63.6,d=[67.8, 74.2, 59.2, 60.1, 61.3, 67.8, 52.7, 60.8, 59.4];
+new Chart(document.getElementById('bse'),{type:'bar',data:{labels:['D1','D2','D3','D4','D5','D6','D7','D8','D9'],datasets:[{data:d,backgroundColor:d.map(function(v){return v>avg?'#D2333F':'#7B4EAF'}),borderRadius:4,barPercentage:0.65}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return'District '+(c.dataIndex+1)+': '+c.parsed.y.toFixed(1)+'%'}}}},scales:{x:{ticks:{color:'rgba(0,0,0,0.45)',font:{size:12}},grid:{display:false}},y:{max:80,ticks:{color:'rgba(0,0,0,0.45)',font:{size:11},callback:function(v){return v+'%'}},grid:{color:'rgba(0,0,0,0.06)'}}}}}); })();</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Low-income (<$35K) burden rate — 10-year citywide trend — LiBRE District Statistics</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:#1F2937;background:transparent;line-height:1.6;padding:8px}
+</style>
+</head>
+<body>
+
+<div role="figure" aria-label="Low-income burden: overall 85.5% to 81.1%. Severe rose from 59.5% to 70.8%." style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:20px;">
+  <h3 style="font-size:15px;font-weight:700;color:#1F2937;margin:0 0 3px;">Low-income (<$35K) burden rate — 10-year citywide trend</h3>
+  <p style="font-size:12px;color:#9CA3AF;margin:0 0 10px;">Rising severe rate: those who remain face worsening conditions (ACS B25074)</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px;font-size:12px;color:#6B7280;"><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#F7BA21;display:inline-block;" aria-hidden="true"></span>Cost burdened (30%+)</span><span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:#D2333F;display:inline-block;" aria-hidden="true"></span>Severely burdened (50%+)</span></div>
+  <div style="position:relative;width:100%;height:280px;">
+    <canvas id="c06" role="img" aria-label="Low-income burden: overall 85.5% to 81.1%. Severe rose from 59.5% to 70.8%."></canvas>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>(function(){ var L=["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],b=[85.5,85.4,85.7,86.1,84.8,84.7,85.7,85.0,82.7,81.5,81.1],s=[59.5,58.8,59.9,60.9,61.4,62.1,64.6,67.5,68.5,70.1,70.8];
+new Chart(document.getElementById('c06'),{type:'line',data:{labels:L,datasets:[
+{label:'Cost burdened (30%+)',data:b,borderColor:'#F7BA21',backgroundColor:'rgba(247,186,33,0.1)',fill:true,tension:0.3,pointRadius:2,borderWidth:2.5},
+{label:'Severely burdened (50%+)',data:s,borderColor:'#D2333F',backgroundColor:'rgba(210,51,63,0.06)',fill:true,tension:0.3,pointRadius:2,borderWidth:2}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.y.toFixed(1)+'%'}}}},scales:{x:{ticks:{color:'rgba(0,0,0,0.45)',font:{size:11}},grid:{display:false}},y:{min:50,max:95,ticks:{color:'rgba(0,0,0,0.45)',font:{size:11},callback:function(v){return v+'%'}},grid:{color:'rgba(0,0,0,0.06)'}}}}}); })();</script>
+</body>
+</html>
