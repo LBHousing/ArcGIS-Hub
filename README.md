@@ -7,7 +7,7 @@ Interactive housing cost burden charts for the [LiBRE District Statistics](https
 1. Push this repo to GitHub
 2. Go to **Settings → Pages → Source → Deploy from branch → main**
 3. Wait ~1 minute for GitHub Pages to build
-4. Your charts will be live at: `https://YOUR-USERNAME.github.io/REPO-NAME/`
+4. Your charts will be live at: `https://lbhousing.github.io/ArcGIS-Hub/`
 
 ## File Structure
 
@@ -35,119 +35,140 @@ Interactive housing cost burden charts for the [LiBRE District Statistics](https
 
 Replace `YOUR-USERNAME` and `REPO-NAME` with your actual GitHub username and repository name.
 
-### Headline Metrics
+### Headline Metrics — All Renters
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/metrics.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/metrics-renters.html"
+  width="100%" height="200" frameborder="0" scrolling="no"
+  title="All renters headline statistics"></iframe>
+```
+
+### Headline Metrics — Seniors
+```html
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/metrics-seniors.html"
+  width="100%" height="200" frameborder="0" scrolling="no"
+  title="Senior 65+ headline statistics"></iframe>
+```
+
+### Headline Metrics — Low-Income
+```html
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/metrics-lowincome.html"
+  width="100%" height="200" frameborder="0" scrolling="no"
+  title="Low-income headline statistics"></iframe>
+```
+
+### Headline Metrics — Combined (legacy)
+```html
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/metrics.html"
   width="100%" height="200" frameborder="0" scrolling="no"
   title="Citywide headline statistics"></iframe>
 ```
 
 ### All Renters — Rate Trend
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/all-renters-rate.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/all-renters-rate.html" 
   width="100%" height="380" frameborder="0" scrolling="no"
   title="All renters cost burden rate trend"></iframe>
 ```
 
 ### All Renters — Count Trend
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/all-renters-count.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/all-renters-count.html" 
   width="100%" height="380" frameborder="0" scrolling="no"
   title="All renters household count trend"></iframe>
 ```
 
 ### 65+ Seniors — Rate Trend
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/seniors-rate.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/seniors-rate.html" 
   width="100%" height="380" frameborder="0" scrolling="no"
   title="Senior 65+ burden rate trend"></iframe>
 ```
 
 ### 65+ Seniors — Count Trend
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/seniors-count.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/seniors-count.html" 
   width="100%" height="380" frameborder="0" scrolling="no"
   title="Senior 65+ household count trend"></iframe>
 ```
 
 ### Low-Income — Rate Trend
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/lowincome-rate.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/lowincome-rate.html" 
   width="100%" height="380" frameborder="0" scrolling="no"
   title="Low-income severe burden rate trend"></iframe>
 ```
 
 ### Low-Income — Count Trend (Displacement)
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/lowincome-count.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/lowincome-count.html" 
   width="100%" height="380" frameborder="0" scrolling="no"
   title="Low-income household displacement trend"></iframe>
 ```
 
 ### District Comparison — All Renters
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/district-bars-all-renters.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/district-bars-all-renters.html" 
   width="100%" height="400" frameborder="0" scrolling="no"
   title="District comparison all renters"></iframe>
 ```
 
 ### District Comparison — Seniors
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/district-bars-seniors.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/district-bars-seniors.html" 
   width="100%" height="400" frameborder="0" scrolling="no"
   title="District comparison seniors"></iframe>
 ```
 
 ### District Comparison — Low-Income
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/charts/district-bars-lowincome.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/charts/district-bars-lowincome.html" 
   width="100%" height="400" frameborder="0" scrolling="no"
   title="District comparison low-income"></iframe>
 ```
 
 ### District Cards (1-9)
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-1.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-1.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 1 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-2.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-2.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 2 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-3.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-3.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 3 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-4.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-4.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 4 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-5.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-5.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 5 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-6.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-6.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 6 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-7.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-7.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 7 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-8.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-8.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 8 housing statistics"></iframe>
 ```
 ```html
-<iframe src="https://YOUR-USERNAME.github.io/REPO-NAME/districts/district-9.html" 
+<iframe src="https://lbhousing.github.io/ArcGIS-Hub/districts/district-9.html" 
   width="100%" height="620" frameborder="0" scrolling="no"
   title="District 9 housing statistics"></iframe>
 ```
