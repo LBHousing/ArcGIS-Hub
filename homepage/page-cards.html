@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LiBRE Pages</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+a{text-decoration:none;color:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:28px;position:relative;overflow:hidden;transition:all .4s;cursor:pointer}
+.card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.c1::before{background:#276ADB}.c2::before{background:#D2333F}.c3::before{background:#F7BA21}.c4::before{background:#7B4EAF}.c5::before{background:#D2333F}.c6::before{background:#276ADB}
+.tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.c1 .tag{color:#4d8ae8}.c2 .tag{color:#D2333F}.c3 .tag{color:#F7BA21}.c4 .tag{color:#7B4EAF}.c5 .tag{color:#D2333F}.c6 .tag{color:#4d8ae8}
+.card h3{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;margin-bottom:8px;line-height:1.2}
+.card p{font-size:14px;color:#94a3b8;line-height:1.6;margin-bottom:16px;font-weight:300}
+.stats{display:flex;gap:20px;margin-bottom:16px}
+.st{border-left:2px solid rgba(255,255,255,.06);padding-left:12px}
+.st .n{font-size:20px;font-weight:700}.st .l{font-size:10px;color:#64748b}
+.link{font-size:13px;font-weight:600;color:#4d8ae8;display:flex;align-items:center;gap:6px}
+.link .arr{transition:transform .3s;display:inline-block}
+.card:hover .link .arr{transform:translateX(6px)}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <a href="https://weare-libre.hub.arcgis.com/pages/district-statistics" class="card c1" target="_parent">
+    <div class="tag">Census Data · ACS 5-Year</div>
+    <h3>District Statistics</h3>
+    <p>Rent burden trends across Long Beach's nine council districts. 10 years of Census data tracking who's cost burdened, where seniors are struggling, and where low-income renters are disappearing.</p>
+    <div class="stats">
+      <div class="st"><div class="n" style="color:#4d8ae8">53.1%</div><div class="l">Cost burdened</div></div>
+      <div class="st"><div class="n" style="color:#D2333F">70.8%</div><div class="l">Low-income severe</div></div>
+      <div class="st"><div class="n" style="color:#7B4EAF">12,153</div><div class="l">Senior renters</div></div>
+    </div>
+    <div class="link">Explore district data <span class="arr">→</span></div>
+  </a>
+
+  <a href="https://weare-libre.hub.arcgis.com/pages/ctpa" class="card c2" target="_parent">
+    <div class="tag">Assessor Parcel Data · 2025</div>
+    <h3>Who Owns Long Beach?</h3>
+    <p>Every residential parcel classified by owner type — LLCs, trusts, corporations, partnerships. Tracking how 2,867 units shifted from individual to entity control in just two years.</p>
+    <div class="stats">
+      <div class="st"><div class="n" style="color:#D2333F">24.9%</div><div class="l">Entity-owned</div></div>
+      <div class="st"><div class="n" style="color:#F7BA21">33,950</div><div class="l">LLC-held units</div></div>
+      <div class="st"><div class="n" style="color:#D2333F">+3,346</div><div class="l">Entity gain (2yr)</div></div>
+    </div>
+    <div class="link">See ownership data <span class="arr">→</span></div>
+  </a>
+
+  <a href="https://weare-libre.hub.arcgis.com/datasets/4203f4308da149e88dbcb4b4be420530" class="card c3" target="_parent">
+    <div class="tag">Code Enforcement · City of Long Beach</div>
+    <h3>Housing Violations</h3>
+    <p>Interactive dashboards mapping code violations across the city. The same areas with high violation counts coincide with historically redlined neighborhoods — 90 years later, the patterns persist.</p>
+    <div class="link">Explore violations <span class="arr">→</span></div>
+  </a>
+
+  <a href="https://weare-libre.hub.arcgis.com/pages/housing-maps" class="card c4" target="_parent">
+    <div class="tag">Demographics · Ethnicity · Tenure</div>
+    <h3>Housing Maps</h3>
+    <p>Rentership and ownership patterns across ethnicities in Long Beach. Mapping how housing challenges intersect with race, income, and geography.</p>
+    <div class="link">View housing maps <span class="arr">→</span></div>
+  </a>
+
+  <a href="https://weare-libre.hub.arcgis.com/pages/eviction-dashboard" class="card c5" target="_parent">
+    <div class="tag">Eviction Data · Heat Map</div>
+    <h3>Eviction Dashboard</h3>
+    <p>Where evictions concentrate in Long Beach — mapped by density with privacy protections. Blue to yellow heat gradient shows which neighborhoods face the most displacement pressure.</p>
+    <div class="link">See eviction patterns <span class="arr">→</span></div>
+  </a>
+
+  <a href="https://weare-libre.hub.arcgis.com/maps/609dded532df49e8bcff75f26e0a3707" class="card c6" target="_parent">
+    <div class="tag">Boundaries · Electoral</div>
+    <h3>Council Districts</h3>
+    <p>Long Beach's nine council district boundaries. Know your district, know your representative, and see how housing conditions vary across the city.</p>
+    <div class="link">View district map <span class="arr">→</span></div>
+  </a>
+
+</div>
+</body>
+</html>

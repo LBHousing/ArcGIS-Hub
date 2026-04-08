@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Block the Cuts</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+a{text-decoration:none}
+.banner{background:linear-gradient(135deg,#1a2035,#1e2540);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:48px;text-align:center;max-width:1100px;margin:0 auto;position:relative;overflow:hidden}
+.banner::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(circle,rgba(210,51,63,.08),transparent 70%);pointer-events:none}
+h2{font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,34px);font-weight:400;margin-bottom:12px;position:relative}
+h2 em{color:#F7BA21;font-style:italic}
+p{font-size:15px;color:#94a3b8;margin-bottom:28px;font-weight:300;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7;position:relative}
+p strong{color:#f1f5f9;font-weight:500}
+.btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:#F7BA21;color:#0a0e1a;padding:14px 28px;border-radius:100px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;transition:all .3s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(247,186,33,.25)}
+.btn-o{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(255,255,255,.12);color:#f1f5f9;padding:14px 28px;border-radius:100px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;transition:all .3s}
+.btn-o:hover{border-color:#4d8ae8;color:#4d8ae8}
+</style>
+</head>
+<body>
+<div class="banner">
+  <h2>Block the Cuts. <em>Build Long Beach.</em></h2>
+  <p>A special parcel tax on institutional-scale property owners — <strong>exempting single-family homeowners with income under $250,000</strong> — to fund fire services, streets, affordable housing, and homelessness prevention. At least <strong>30% of revenues</strong> go directly to affordable housing production.</p>
+  <div class="btns">
+    <a href="https://www.longbeach.gov/globalassets/city-clerk/media-library/documents/elections/2026/petition/ballot-title-and-summary-for-block-the-cuts-and-build-long-beach" class="btn-p" target="_blank">Read the ballot summary ↗</a>
+    <a href="https://www.longbeach.gov/cityclerk/elections/petitions/" class="btn-o" target="_blank">View petition details ↗</a>
+  </div>
+</div>
+</body>
+</html>

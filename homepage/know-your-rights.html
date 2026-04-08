@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Know Your Rights</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#34d399;border-radius:12px 12px 0 0}
+h3{font-family:'Instrument Serif',serif;font-size:18px;font-weight:400;margin-bottom:8px}
+p{font-size:14px;color:#94a3b8;line-height:1.6;font-weight:300}
+p strong{color:#34d399;font-weight:600}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="card">
+    <h3>Check your rent increase</h3>
+    <p>Use the rent calculator at <strong>tenantprotections.org/calculator</strong> to verify if a rent increase is legal under state and local law.</p>
+  </div>
+  <div class="card">
+    <h3>Get legal help — free</h3>
+    <p>Connect with a free attorney through <strong>Stay Housed LA</strong> or visit <strong>LAFLA</strong> for low-income legal assistance.</p>
+  </div>
+  <div class="card">
+    <h3>Join a workshop</h3>
+    <p>Contact <strong>LiBRE</strong> for Know Your Rights workshops and tenant organizing support. Visit <strong>wearelbre.org</strong></p>
+  </div>
+</div>
+</body>
+</html>

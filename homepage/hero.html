@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LiBRE Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:60px 28px}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(39,106,219,.12) 0%,transparent 60%);pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(210,51,63,.1) 0%,transparent 60%);pointer-events:none;animation:drift 15s ease-in-out infinite alternate-reverse}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(40px,-30px)}}
+.inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.org{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px}
+.org .dot{width:10px;height:10px;background:#F7BA21;border-radius:2px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.org span{font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#F7BA21}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(40px,7vw,72px);font-weight:400;line-height:1.05;margin-bottom:24px;letter-spacing:-.03em}
+h1 em{font-style:italic;color:#F7BA21}
+h1 .thin{font-weight:300;color:#94a3b8}
+.sub{font-size:18px;color:#94a3b8;line-height:1.7;margin-bottom:40px;font-weight:300;max-width:660px}
+.sub strong{color:#f1f5f9;font-weight:500}
+.cta{display:inline-flex;align-items:center;gap:10px;background:#276ADB;color:#fff;padding:14px 32px;border-radius:100px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.cta:hover{background:#4d8ae8;transform:translateY(-2px);box-shadow:0 8px 30px rgba(39,106,219,.3)}
+.cta .arr{transition:transform .3s}.cta:hover .arr{transform:translateX(4px)}
+@media(max-width:600px){h1{font-size:34px}.sub{font-size:16px}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="inner">
+    <div class="org"><div class="dot"></div><span>Long Beach Residents Empowered</span></div>
+    <h1>Housing is a <em>human right.</em><br><span class="thin">We have the data to prove</span><br>where it's <em>under attack.</em></h1>
+    <p class="sub">LiBRE uses <strong>GIS technology and public data</strong> to map the forces displacing Long Beach renters — from corporate landlords and code violations to rent burden and eviction patterns. In a city that's <strong>60% renters</strong>, understanding who owns the housing is the first step to protecting the people who live in it.</p>
+    <a href="https://weare-libre.hub.arcgis.com/#explore" class="cta" target="_parent">Explore the data <span class="arr">→</span></a>
+  </div>
+</section>
+</body>
+</html>
