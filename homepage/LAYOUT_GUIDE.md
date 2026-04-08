@@ -1,6 +1,6 @@
 # LiBRE Homepage — Hub Layout Guide
 
-Replace `BASEURL` below with your GitHub Pages URL:
+GitHub Pages base URL:
 `https://lbhousing.github.io/ArcGIS-Hub`
 
 ---
@@ -18,7 +18,7 @@ Set **section backgrounds** to the same `#0a0e1a` unless noted otherwise.
 ### ROW 1 — Hero (GitHub iframe)
 **Hub element:** Iframe card, full width, NO padding
 ```
-Iframe URL:  BASEURL/home/hero.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/hero.html
 Height:      700
 Scrolling:   no
 Frameborder: 0
@@ -30,7 +30,7 @@ Frameborder: 0
 ### ROW 2 — Marquee ticker (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/marquee.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/marquee.html
 Height:      50
 Scrolling:   no
 Frameborder: 0
@@ -42,7 +42,7 @@ Frameborder: 0
 ### ROW 3 — Stats row (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/stats-row.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/stats-row.html
 Height:      130
 Scrolling:   no
 Frameborder: 0
@@ -70,7 +70,7 @@ Paste this HTML:
 ### ROW 5 — Page navigation cards (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/page-cards.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/page-cards.html
 Height:      820
 Scrolling:   no
 Frameborder: 0
@@ -107,7 +107,7 @@ Mobile note: Cards stack to 1 column — may need height="1600" on very narrow s
 ### ROW 8 — Mission card (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/mission.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/mission.html
 Height:      340
 Scrolling:   no
 Frameborder: 0
@@ -139,7 +139,7 @@ Same as Row 6.
 ### ROW 11 — Block the Cuts CTA (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/block-the-cuts.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/block-the-cuts.html
 Height:      320
 Scrolling:   no
 Frameborder: 0
@@ -171,7 +171,7 @@ Same as Row 6.
 ### ROW 14 — Know Your Rights cards (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/know-your-rights.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/know-your-rights.html
 Height:      200
 Scrolling:   no
 Frameborder: 0
@@ -183,7 +183,7 @@ Frameborder: 0
 ### ROW 15 — Footer (GitHub iframe)
 **Hub element:** Iframe card, full width
 ```
-Iframe URL:  BASEURL/home/footer.html
+Iframe URL:  https://lbhousing.github.io/ArcGIS-Hub/homepage/footer.html
 Height:      100
 Scrolling:   no
 Frameborder: 0
@@ -220,7 +220,7 @@ Frameborder: 0
 
 From your repo root:
 ```bash
-git add home/
+git add homepage/
 git commit -m "Homepage: hero, marquee, stats, page cards, mission, CTA, rights, footer"
 git push origin main
 ```
