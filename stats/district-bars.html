@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>District Bars</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px}
+.full{grid-column:1/-1}
+h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:12px}
+.lg{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:11px;color:#64748b}
+.lg span{display:flex;align-items:center;gap:4px}.lg .d{width:8px;height:8px;border-radius:2px}
+.cw{position:relative;width:100%;height:300px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="card"><h3>All renters — cost burden by district</h3><div class="cs">2020-2024 | Above citywide avg (53.1%) in red</div>
+    <div class="lg"><span><span class="d" style="background:#276ADB"></span>At/below avg</span><span><span class="d" style="background:#D2333F"></span>Above avg</span></div>
+    <div class="cw"><canvas id="b1"></canvas></div></div>
+  <div class="card"><h3>65+ seniors — burden by district</h3><div class="cs">2020-2024 | Above citywide avg (63.7%) in red</div>
+    <div class="lg"><span><span class="d" style="background:#7B4EAF"></span>At/below avg</span><span><span class="d" style="background:#D2333F"></span>Above avg</span></div>
+    <div class="cw"><canvas id="b2"></canvas></div></div>
+  <div class="card full"><h3>Low-income — severe burden by district</h3><div class="cs">2020-2024 | Above citywide avg (70.8%) in red</div>
+    <div class="lg"><span><span class="d" style="background:#F7BA21"></span>At/below avg</span><span><span class="d" style="background:#D2333F"></span>Above avg</span></div>
+    <div class="cw" style="height:260px"><canvas id="b3"></canvas></div></div>
+</div>
+<script>
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
+var dl=['D1','D2','D3','D4','D5','D6','D7','D8','D9'],gC='rgba(255,255,255,0.04)';
+function db(id,data,avg,clr){new Chart(document.getElementById(id),{type:'bar',data:{labels:dl,datasets:[{data:data,backgroundColor:data.map(function(v){return v>avg?'#D2333F':clr}),borderRadius:4,barPercentage:.65}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return'D'+(c.dataIndex+1)+': '+c.parsed.y.toFixed(1)+'%'}}}},scales:{x:{ticks:{color:'#94a3b8',font:{size:12}},grid:{display:false}},y:{ticks:{color:'#64748b',font:{size:10},callback:function(v){return v+'%'}},grid:{color:gC}}}}})}
+db('b1',[56.8,56.3,45.8,46.5,48.8,58.0,49.1,54.8,53.3],53.1,'#276ADB');
+db('b2',[67.8,74.3,59.2,60.1,61.3,67.8,52.7,60.8,59.4],63.7,'#7B4EAF');
+db('b3',[67.2,75.6,78.3,67.7,68.9,75.3,65.7,63.2,74.0],70.8,'#F7BA21');
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>District Stats Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:60px 28px}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(39,106,219,.12) 0%,transparent 60%);pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(123,78,175,.1) 0%,transparent 60%);pointer-events:none;animation:drift 15s ease-in-out infinite alternate-reverse}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(40px,-30px)}}
+.inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:8px;background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:500;color:#4d8ae8;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.tag .dot{width:6px;height:6px;background:#4d8ae8;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(40px,7vw,72px);font-weight:400;line-height:1.05;margin-bottom:24px;letter-spacing:-.03em}
+h1 em{font-style:italic;color:#F7BA21}
+h1 .thin{font-weight:300;color:#94a3b8}
+.sub{font-size:18px;color:#94a3b8;line-height:1.7;margin-bottom:40px;font-weight:300;max-width:660px}
+.sub strong{color:#f1f5f9;font-weight:500}
+.stats{display:flex;gap:40px;flex-wrap:wrap}
+.stat{border-left:2px solid rgba(255,255,255,.06);padding-left:20px}
+.stat .num{font-size:36px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat .lbl{font-size:13px;color:#64748b;margin-top:2px}
+.bl{color:#4d8ae8}.pu{color:#7B4EAF}.pp{color:#F7BA21}.rd{color:#D2333F}
+@media(max-width:600px){h1{font-size:34px}.sub{font-size:16px}.stats{gap:24px}.stat .num{font-size:28px}}
+</style>
+</head>
+<body>
+<section class="hero"><div class="inner">
+  <div class="tag"><span class="dot"></span>ACS 5-Year · 2020-2024</div>
+  <h1><span class="thin">A decade of data.</span><br>Nine districts. <em>One crisis.</em></h1>
+  <p class="sub">10 years of Census data tracking rent burden across Long Beach's nine council districts — who's cost burdened, where seniors are struggling, and where <strong>low-income renters are disappearing</strong>.</p>
+  <div class="stats">
+    <div class="stat"><div class="num bl" id="s1">0</div><div class="lbl">Renter households</div></div>
+    <div class="stat"><div class="num rd" id="s2">0%</div><div class="lbl">Cost burdened</div></div>
+    <div class="stat"><div class="num pu" id="s3">0</div><div class="lbl">Senior renters (65+)</div></div>
+    <div class="stat"><div class="num pp" id="s4">0%</div><div class="lbl">Low-income severe</div></div>
+  </div>
+</div></section>
+<script>
+function ac(el,t,s,d){var c=0,inc=t/60;var i=setInterval(function(){c+=inc;if(c>=t){c=t;clearInterval(i)}el.textContent=Math.round(c).toLocaleString()+(s||'')},d/60)}
+ac(document.getElementById('s1'),99965,'',2000);
+ac(document.getElementById('s3'),12153,'',2000);
+(function(){var el=document.getElementById('s2'),t=53.1,c=0;var i=setInterval(function(){c+=.9;if(c>=t){c=t;clearInterval(i)}el.textContent=c.toFixed(1)+'%'},16.67)})();
+(function(){var el=document.getElementById('s4'),t=70.8,c=0;var i=setInterval(function(){c+=1.2;if(c>=t){c=t;clearInterval(i)}el.textContent=c.toFixed(1)+'%'},16.67)})();
+</script>
+</body>
+</html>
