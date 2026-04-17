@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ownership Bars</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+.m{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px}
+.m .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.m .lb{font-size:13px;color:#94a3b8}.m .vl{font-size:22px;font-weight:700}
+.m .pc{font-size:12px;color:#64748b;margin-bottom:6px}
+.track{height:6px;background:#0a0e1a;border-radius:3px;overflow:hidden}
+.fill{height:100%;border-radius:3px;transition:width 1.5s ease}
+.m .dt{font-size:11px;margin-top:6px;font-weight:600}
+.dr{color:#D2333F}.dg{color:#34d399}.dn{color:#64748b}
+.bl{color:#4d8ae8}.rd{color:#D2333F}.pp{color:#F7BA21}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="m"><div class="hd"><span class="lb">Individual owners</span><span class="vl bl">78,284</span></div><div class="pc">41.9% of all city units</div><div class="track"><div class="fill" style="width:41.9%;background:#276ADB"></div></div><div class="dt dr">▼ -2,867 units lost in 2 years</div></div>
+
+  <div class="m"><div class="hd"><span class="lb">Individual trusts</span><span class="vl bl">61,230</span></div><div class="pc">32.8% of all city units</div><div class="track"><div class="fill" style="width:32.8%;background:#276ADB"></div></div><div class="dt dn">▲ +1,044 (estate transfers)</div></div>
+
+  <div class="m"><div class="hd"><span class="lb">LLCs</span><span class="vl rd">33,950</span></div><div class="pc">18.2% of all city units — 5.5 units/parcel avg</div><div class="track"><div class="fill" style="width:18.2%;background:#D2333F"></div></div><div class="dt dr">▲ +1,826 units gained</div></div>
+
+  <div class="m"><div class="hd"><span class="lb">Limited partnerships</span><span class="vl pp">8,153</span></div><div class="pc">4.4% of city — 16.3 units/parcel avg</div><div class="track"><div class="fill" style="width:4.4%;background:#F7BA21"></div></div><div class="dt dr">▲ +199 units gained</div></div>
+
+  <div class="m"><div class="hd"><span class="lb">Corporations</span><span class="vl pp">4,178</span></div><div class="pc">2.2% of city — 4.4 units/parcel avg</div><div class="track"><div class="fill" style="width:2.2%;background:#F7BA21"></div></div><div class="dt dr">▲ +295 units gained</div></div>
+
+  <div class="m"><div class="hd"><span class="lb">Govt / Utility / Other</span><span class="vl dn">863</span></div><div class="pc">0.5% of city</div><div class="track"><div class="fill" style="width:0.5%;background:#64748b"></div></div><div class="dt dn">Stable</div></div>
+</div>
+</body>
+</html>

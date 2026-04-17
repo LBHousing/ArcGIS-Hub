@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Top 25</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;max-width:1100px;margin:0 auto}
+h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:12px}
+.lg{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px;font-size:11px;color:#64748b}
+.lg span{display:flex;align-items:center;gap:4px}.lg .d{width:8px;height:8px;border-radius:2px}
+.cw{position:relative;width:100%;height:680px}
+</style>
+</head>
+<body>
+<div class="card">
+  <h3>Top 25 Entity Owners by Unit Count (2025)</h3>
+  <div class="cs">Multi-property entity owners only | Color = entity type</div>
+  <div class="lg">
+    <span><span class="d" style="background:#D2333F"></span>LLC</span>
+    <span><span class="d" style="background:#F7BA21"></span>Ltd. Partnership</span>
+    <span><span class="d" style="background:#7B4EAF"></span>Corporation</span>
+    <span><span class="d" style="background:#276ADB"></span>Ind. Trust</span>
+  </div>
+  <div class="cw"><canvas id="t25" role="img" aria-label="Top 25 entity owners horizontal bar chart"></canvas></div>
+</div>
+<script>
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
+(function(){
+var lb=["2009 CUSA COMMUNITY OWNER LLC","AVANATH NORTHPOINTE LP","SPRINGDALE WEST PRESERVATION LP","AVANATH SEAPORT LLC","DECRO LONG BEACH LP","PENN PROPERTIES LLC","LYON 1900 OCEAN OWNER LLC","CENTURY VILLAGES AT CABRILLO INC","GELT VOLTA PINE FEE OWNER LLC","SW PARK AVENUE LLC","404 PINE LP","SPP CHANNEL POINT LLC","GSIC II PINE OWNER LP","CENTURY VILLAGE AT CABRILLO INC","LING, PAUL S & EDYTHE I TRS","MIRACLE MILE PROPERTIES LP","ATLANTIC AVE HOLDINGS LLC","MG PINE AT 6TH APTS LLC","KARAHALIOS, GEORGE M TR","HEBISH, NADY Z CO TR","MERCY HOUSING CA 71 LP","ACKERFIELD 2 LLC","HFH AMG LLC","SBG REC LLC","WP LBMF LLC AND"];
+var dt=[538,528,410,358,332,310,284,274,271,247,221,212,211,202,201,184,169,163,157,153,148,143,127,123,122];
+var ty=["LLC","LP","LP","LLC","LP","LLC","LLC","Corp","LLC","LLC","LP","LLC","LP","Corp","Trust","LP","LLC","LLC","Trust","Trust","LP","LLC","LLC","LLC","LLC"];
+var cm={"LLC":"#D2333F","LP":"#F7BA21","Corp":"#7B4EAF","Trust":"#276ADB"};
+new Chart(document.getElementById('t25'),{type:'bar',data:{labels:lb,datasets:[{data:dt,backgroundColor:ty.map(function(t){return cm[t]}),borderWidth:0,borderRadius:3,barPercentage:.7}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.x.toLocaleString()+' units ('+ty[c.dataIndex]+')'}}}},scales:{x:{ticks:{color:'#64748b',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#94a3b8',font:{size:9}},grid:{display:false}}}}});
+})();
+</script>
+</body>
+</html>

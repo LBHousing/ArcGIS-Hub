@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ownership Charts</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+Chart.defaults&&(Chart.defaults.color='#94a3b8',Chart.defaults.borderColor='rgba(255,255,255,0.06)');
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px}
+h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:12px}
+.lg{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:11px;color:#64748b}
+.lg span{display:flex;align-items:center;gap:4px}.lg .d{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.cw{position:relative;width:100%;height:280px}
+.cd{max-width:300px;margin:0 auto}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="card">
+    <h3>Who Owns Long Beach? (2025)</h3><div class="cs">All 186,658 dwelling units by ownership category</div>
+    <div class="lg"><span><span class="d" style="background:#D2333F"></span>Corporate/Entity (24.9%)</span><span><span class="d" style="background:#276ADB"></span>Individual (74.7%)</span><span><span class="d" style="background:#34d399"></span>Govt (0.3%)</span></div>
+    <div class="cd"><canvas id="donut1" role="img" aria-label="24.9% corporate, 74.7% individual, 0.3% government"></canvas></div>
+  </div>
+  <div class="card">
+    <h3>2-Year Unit Change by Owner Type</h3><div class="cs">Net change across all 186,658 units (2023 → 2025)</div>
+    <div class="cw"><canvas id="yoy1" role="img" aria-label="Individuals lost 2,867. LLCs gained 1,826."></canvas></div>
+  </div>
+</div>
+<script>
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
+new Chart(document.getElementById('donut1'),{type:'doughnut',data:{labels:['Corporate/Entity','Individual','Govt/Utility'],datasets:[{data:[46513,139514,631],backgroundColor:['#D2333F','#276ADB','#34d399'],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){var t=c.dataset.data.reduce(function(a,b){return a+b},0);return c.label+': '+c.parsed.toLocaleString()+' ('+(c.parsed/t*100).toFixed(1)+'%)'}}}}}});
+(function(){var d=[-2867,1044,1826,199,295,-13,7,0,-5];new Chart(document.getElementById('yoy1'),{type:'bar',data:{labels:['Individual','Ind.Trust','LLC','Ltd.Prtnr','Corp','Inst.Trust','Govt','Utility','HOA'],datasets:[{data:d,backgroundColor:d.map(function(v){return v>=0?'rgba(210,51,63,0.8)':'rgba(39,106,219,0.8)'}),borderRadius:4,barPercentage:.6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return(c.parsed.y>0?'+':'')+c.parsed.y.toLocaleString()+' units'}}}},scales:{x:{ticks:{color:'#64748b',font:{size:9},maxRotation:45},grid:{display:false}},y:{ticks:{color:'#64748b',font:{size:10},callback:function(v){return(v>0?'+':'')+v.toLocaleString()}},grid:{color:'rgba(255,255,255,0.04)'}}}}});})();
+</script>
+</body>
+</html>
