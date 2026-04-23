@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Eviction Analysis — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:60px 28px}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(210,51,63,.1) 0%,transparent 60%);pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(247,186,33,.08) 0%,transparent 60%);pointer-events:none;animation:drift 15s ease-in-out infinite alternate-reverse}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(40px,-30px)}}
+.inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;text-align:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:#1e2540;border:1px solid rgba(210,51,63,.2);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:500;color:#D2333F;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.tag .dot{width:6px;height:6px;background:#D2333F;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(40px,7vw,72px);font-weight:400;line-height:1.05;margin-bottom:24px;letter-spacing:-.03em}
+h1 em{font-style:italic;color:#F7BA21}
+h1 .thin{font-weight:300;color:#94a3b8}
+.sub{font-size:18px;color:#94a3b8;line-height:1.7;margin:0 auto 48px;font-weight:300;max-width:620px}
+.sub strong{color:#f1f5f9;font-weight:500}
+
+.preview{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:900px;margin:0 auto 48px}
+.pcard{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;text-align:left;position:relative;overflow:hidden}
+.pcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.pcard:nth-child(1)::after{background:#D2333F}
+.pcard:nth-child(2)::after{background:#F7BA21}
+.pcard:nth-child(3)::after{background:#7B4EAF}
+.pcard:nth-child(4)::after{background:#276ADB}
+.pcard .icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:18px;font-weight:400;margin-bottom:10px}
+.pcard:nth-child(1) .icon{background:rgba(210,51,63,.12);color:#D2333F}
+.pcard:nth-child(2) .icon{background:rgba(247,186,33,.12);color:#F7BA21}
+.pcard:nth-child(3) .icon{background:rgba(123,78,175,.12);color:#7B4EAF}
+.pcard:nth-child(4) .icon{background:rgba(39,106,219,.12);color:#4d8ae8}
+.pcard h3{font-size:13px;font-weight:600;margin-bottom:4px;color:#f1f5f9}
+.pcard p{font-size:11px;color:#64748b;line-height:1.5}
+
+.coming{display:inline-flex;align-items:center;gap:12px;background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 32px;margin-bottom:32px}
+.coming .bar{display:flex;gap:4px;align-items:center}
+.coming .bar span{display:block;width:40px;height:6px;border-radius:3px;background:#252d4a;position:relative;overflow:hidden}
+.coming .bar span::after{content:'';position:absolute;top:0;left:0;height:100%;border-radius:3px;animation:load 3s ease-in-out infinite}
+.coming .bar span:nth-child(1)::after{width:100%;background:#D2333F;animation-delay:0s}
+.coming .bar span:nth-child(2)::after{width:80%;background:#F7BA21;animation-delay:.2s}
+.coming .bar span:nth-child(3)::after{width:60%;background:#7B4EAF;animation-delay:.4s}
+.coming .bar span:nth-child(4)::after{width:40%;background:#276ADB;animation-delay:.6s}
+@keyframes load{0%,100%{opacity:.3}50%{opacity:1}}
+.coming .txt{font-size:14px;font-weight:600;color:#94a3b8;letter-spacing:1px;text-transform:uppercase}
+
+.note{font-size:13px;color:#64748b;line-height:1.7;max-width:520px;margin:0 auto}
+.note a{color:#4d8ae8;text-decoration:none}
+.note a:hover{text-decoration:underline}
+
+@media(max-width:700px){.preview{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.preview{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="hero"><div class="inner">
+  <div class="tag"><span class="dot"></span>Coming Soon</div>
+  <h1><span class="thin">Twenty years.</span><br>Every filing. <em>Every district.</em></h1>
+  <p class="sub">We're building a comprehensive eviction analysis spanning <strong>two decades of filing data</strong> across Long Beach — tracking patterns, displacement, and the policies that shaped them.</p>
+
+  <div class="preview">
+    <div class="pcard">
+      <div class="icon">01</div>
+      <h3>20-Year Trends</h3>
+      <p>Filing rates by district from 2005 to present — before, during, and after key policy shifts.</p>
+    </div>
+    <div class="pcard">
+      <div class="icon">02</div>
+      <h3>Geographic Patterns</h3>
+      <p>How eviction hotspots have shifted across neighborhoods over two decades.</p>
+    </div>
+    <div class="pcard">
+      <div class="icon">03</div>
+      <h3>Policy Impact</h3>
+      <p>AB 1482, COVID moratoriums, CTPA — measuring what worked and what didn't.</p>
+    </div>
+    <div class="pcard">
+      <div class="icon">04</div>
+      <h3>Connected Data</h3>
+      <p>Cross-referencing evictions with rent burden, ownership shifts, and demographics.</p>
+    </div>
+  </div>
+
+  <div class="coming">
+    <div class="bar"><span></span><span></span><span></span><span></span></div>
+    <div class="txt">Data analysis in progress</div>
+  </div>
+
+  <p class="note">In the meantime, view current eviction data on our <a href="https://libre.hub.arcgis.com/pages/housing-conditions">Housing Conditions</a> page, or explore district-level rent burden trends on <a href="https://libre.hub.arcgis.com/pages/district-statistics">District Statistics</a>.</p>
+
+</div></section>
+</body>
+</html>
