@@ -34,7 +34,7 @@ h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64
 <script>
 Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
 var L=["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],gC='rgba(255,255,255,0.04)';
-var ln=function(l,d,c,f){return{label:l,data:d,borderColor:c,backgroundColor:f?c.replace(')',',0.06)').replace('rgb','rgba'):'transparent',fill:!!f,tension:.3,pointRadius:2,borderWidth:2}};
+var ln=function(l,d,c,f){var bg='transparent';if(f){if(c.indexOf('rgba')===0){bg=c.replace(/,[^,]+\)$/,',0.06)')}else{bg=c.replace(')',',0.06)').replace('rgb','rgba')}}return{label:l,data:d,borderColor:c,backgroundColor:bg,fill:!!f,tension:.3,pointRadius:2,borderWidth:2}};
 
 new Chart(document.getElementById('c1'),{type:'line',data:{labels:L,datasets:[
   ln('Burdened (30%+)',[55.4,55.0,53.4,52.5,52.7,52.6,52.4,53.2,53.0,53.4,53.1],'rgb(39,106,219)',1),

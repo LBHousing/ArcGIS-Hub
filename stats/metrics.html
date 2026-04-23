@@ -8,27 +8,57 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:1100px;margin:0 auto}
-.m{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px}
-.m .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.m .lb{font-size:13px;color:#94a3b8}.m .vl{font-size:24px;font-weight:700}
-.m .pc{font-size:12px;color:#64748b;margin-bottom:6px}
-.track{height:6px;background:#0a0e1a;border-radius:3px;overflow:hidden}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1100px;margin:0 auto}
+.m{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:18px}
+.m .lb{font-size:12px;color:#94a3b8;margin-bottom:4px}
+.m .vl{font-size:22px;font-weight:700;margin-bottom:2px}
+.m .sub{font-size:11px;color:#64748b;margin-bottom:6px}
+.track{height:5px;background:#0a0e1a;border-radius:3px;overflow:hidden}
 .fill{height:100%;border-radius:3px}
-.m .dt{font-size:11px;margin-top:6px;font-weight:600}
+.m .dt{font-size:10px;margin-top:6px;font-weight:600}
 .dr{color:#D2333F}.dg{color:#34d399}.dn{color:#64748b}
+.bl{color:#4d8ae8}.pu{color:#7B4EAF}.pp{color:#F7BA21}.rd{color:#D2333F}
+.sep{grid-column:1/-1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);margin:2px 0}
+.cat{grid-column:1/-1;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:4px 0 0}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <div class="grid">
-  <div class="m"><div class="hd"><span class="lb">Total renter households</span><span class="vl" style="color:#4d8ae8">99,965</span></div><div class="pc">Up from 87,263 in 2010-2014</div><div class="track"><div class="fill" style="width:100%;background:#276ADB"></div></div><div class="dt dn">+12,702 (+14.6%) over 10 years</div></div>
 
-  <div class="m"><div class="hd"><span class="lb">Cost burdened (30%+)</span><span class="vl" style="color:#4d8ae8">53.1%</span></div><div class="pc">Down from 55.4% in 2010-2014</div><div class="track"><div class="fill" style="width:53.1%;background:#276ADB"></div></div><div class="dt dg">▼ -2.3pp improvement</div></div>
+  <div class="cat bl">All Renters — B25070</div>
 
-  <div class="m"><div class="hd"><span class="lb">65+ senior renters</span><span class="vl" style="color:#7B4EAF">12,153</span></div><div class="pc">Up from 8,702 in 2010-2014</div><div class="track"><div class="fill" style="width:100%;background:#7B4EAF"></div></div><div class="dt dr">▲ +39.7% growth (+3,451 HH)</div></div>
+  <div class="m"><div class="lb">Total renter households</div><div class="vl bl">99,965</div><div class="sub">Up from 87,263</div><div class="track"><div class="fill" style="width:100%;background:#276ADB"></div></div><div class="dt dn">+12,702 (+14.6%) over 10yr</div></div>
 
-  <div class="m"><div class="hd"><span class="lb">Low-income severe (50%+)</span><span class="vl" style="color:#F7BA21">70.8%</span></div><div class="pc">Up from 59.5% in 2010-2014</div><div class="track"><div class="fill" style="width:70.8%;background:#F7BA21"></div></div><div class="dt dr">▲ +11.3pp worsening</div></div>
+  <div class="m"><div class="lb">Cost burdened (30%+)</div><div class="vl bl">53.1%</div><div class="sub">53,104 households</div><div class="track"><div class="fill" style="width:53.1%;background:#276ADB"></div></div><div class="dt dg">▼ -2.3pp from 55.4%</div></div>
+
+  <div class="m"><div class="lb">Severely burdened (50%+)</div><div class="vl bl">26.7%</div><div class="sub">26,687 households</div><div class="track"><div class="fill" style="width:26.7%;background:#276ADB"></div></div><div class="dt dg">▼ -3.2pp from 29.9%</div></div>
+
+  <div class="m"><div class="lb">Burdened HH count change</div><div class="vl rd">+4,745</div><div class="sub">48,359 → 53,104 burdened</div><div class="track"><div class="fill" style="width:100%;background:#D2333F"></div></div><div class="dt dr">▲ Rate down but MORE people affected</div></div>
+
+  <div class="sep"></div>
+  <div class="cat pu">65+ Senior Renters — B25072</div>
+
+  <div class="m"><div class="lb">Total 65+ renter HH</div><div class="vl pu">12,153</div><div class="sub">Up from 8,702</div><div class="track"><div class="fill" style="width:100%;background:#7B4EAF"></div></div><div class="dt dr">▲ +39.7% growth (+3,451 HH)</div></div>
+
+  <div class="m"><div class="lb">Senior burdened (30%+)</div><div class="vl pu">63.7%</div><div class="sub">7,736 households</div><div class="track"><div class="fill" style="width:63.7%;background:#7B4EAF"></div></div><div class="dt dr">▲ +0.4pp — stubbornly high</div></div>
+
+  <div class="m"><div class="lb">Senior severe (35%+)</div><div class="vl pu">54.9%</div><div class="sub">6,669 households</div><div class="track"><div class="fill" style="width:54.9%;background:#7B4EAF"></div></div><div class="dt dr">▲ +1.8pp from 53.1%</div></div>
+
+  <div class="m"><div class="lb">Burdened senior growth</div><div class="vl rd">+2,234</div><div class="sub">5,502 → 7,736 burdened</div><div class="track"><div class="fill" style="width:100%;background:#D2333F"></div></div><div class="dt dr">▲ +40.6% more burdened seniors</div></div>
+
+  <div class="sep"></div>
+  <div class="cat pp">Low-Income &lt;$35K — B25074</div>
+
+  <div class="m"><div class="lb">Total low-income renter HH</div><div class="vl pp">25,917</div><div class="sub">Down from 41,082</div><div class="track"><div class="fill" style="width:63%;background:#F7BA21"></div></div><div class="dt dr">▼ -15,165 HH displaced (-36.9%)</div></div>
+
+  <div class="m"><div class="lb">Low-income burdened (30%+)</div><div class="vl pp">81.1%</div><div class="sub">21,022 households</div><div class="track"><div class="fill" style="width:81.1%;background:#F7BA21"></div></div><div class="dt dg">▼ -4.4pp from 85.5%</div></div>
+
+  <div class="m"><div class="lb">Low-income severe (50%+)</div><div class="vl rd">70.8%</div><div class="sub">18,359 households</div><div class="track"><div class="fill" style="width:70.8%;background:#D2333F"></div></div><div class="dt dr">▲ +11.3pp from 59.5%</div></div>
+
+  <div class="m"><div class="lb">Share of all renters</div><div class="vl pp">25.9%</div><div class="sub">Down from 47.1%</div><div class="track"><div class="fill" style="width:25.9%;background:#F7BA21"></div></div><div class="dt dr">▼ -21.2pp — displacement signal</div></div>
+
 </div>
 </body>
 </html>
