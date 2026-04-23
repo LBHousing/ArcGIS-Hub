@@ -11,8 +11,9 @@ All Hub section backgrounds: `#0a0e1a`
 ### ROW 1 — Hero (GitHub iframe)
 ```
 URL:    BASEURL/stats/hero.html
-Height: 700
+Height: 800
 ```
+3 rows of stats (12 indicators) with numbered footnotes. Sources: Census ACS, NLIHC, Long Beach Forward, USC Lusk Center.
 
 ### ROW 2 — Marquee (GitHub iframe)
 ```
@@ -30,11 +31,12 @@ Height: 50
 </div>
 ```
 
-### ROW 4 — Metric bars (GitHub iframe)
+### ROW 4 — Metric bars — expanded (GitHub iframe)
 ```
 URL:    BASEURL/stats/metrics.html
-Height: 160
+Height: 540
 ```
+12 metric cards in 3 rows of 4, grouped by category (All Renters / Seniors / Low-Income) with colored section labels and dividers between groups.
 
 ### ROW 5 — Divider (Hub text card)
 ```html
@@ -177,10 +179,10 @@ Height: 1400
 
 | Row | Type | Content | Height |
 |-----|------|---------|--------|
-| 1 | iframe | Hero + counters | 700 |
+| 1 | iframe | Hero + 12 stats + sources | 800 |
 | 2 | iframe | Marquee (citywide) | 50 |
 | 3 | text card | "01 Citywide Snapshot" | — |
-| 4 | iframe | Metric bars (4) | 160 |
+| 4 | iframe | Metric bars (12 cards, 3 categories) | 540 |
 | 5 | text card | Divider | — |
 | 6 | text card | "02 All Renters" | — |
 | 7 | iframe | Rate + count charts | 400 |
