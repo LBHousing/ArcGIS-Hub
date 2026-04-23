@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Concentration</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;max-width:1100px;margin:0 auto}
+h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:12px}
+.cw{position:relative;width:100%;height:280px}
+</style>
+</head>
+<body>
+<div class="card">
+  <h3>Share of Entity-Owned Units by Concentration (2025)</h3>
+  <div class="cs">% of all entity-owned units controlled by owners in each size bucket</div>
+  <div class="cw"><canvas id="c1" role="img" aria-label="63.8% single-property, 27.2% 2-4 properties"></canvas></div>
+</div>
+<script>
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['1','2-4','5-9','10-24','25-49','50-99','100+'],datasets:[{data:[63.8,27.2,5.3,2.7,0.7,0.1,0.2],backgroundColor:['rgba(39,106,219,0.3)','rgba(39,106,219,0.5)','rgba(39,106,219,0.7)','#276ADB','#1A3D6D','#0F2847','#0a1230'],borderRadius:4,barPercentage:.6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.y.toFixed(1)+'% of entity units'}}}},scales:{x:{title:{display:true,text:'Properties owned by same entity',font:{size:11},color:'#64748b'},ticks:{color:'#64748b',font:{size:10}},grid:{display:false}},y:{ticks:{color:'#64748b',font:{size:10},callback:function(v){return v+'%'}},grid:{color:'rgba(255,255,255,0.04)'}}}}});
+</script>
+</body>
+</html>

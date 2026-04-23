@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Owner Type Charts</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px}
+h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:12px}
+.lg{display:flex;gap:14px;margin-bottom:10px;font-size:11px;color:#64748b}
+.lg span{display:flex;align-items:center;gap:4px}.lg .d{width:8px;height:8px;border-radius:2px}
+.cw{position:relative;width:100%;height:280px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="card"><h3>Owner Type — Parcels (2023 vs 2025)</h3><div class="cs">All owner categories</div>
+    <div class="lg"><span><span class="d" style="background:#276ADB"></span>2023</span><span><span class="d" style="background:#D2333F"></span>2025</span></div>
+    <div class="cw"><canvas id="otp" role="img" aria-label="Owner type parcel comparison"></canvas></div></div>
+  <div class="card"><h3>Owner Type — Units (2023 vs 2025)</h3><div class="cs">All owner categories</div>
+    <div class="lg"><span><span class="d" style="background:#276ADB"></span>2023</span><span><span class="d" style="background:#D2333F"></span>2025</span></div>
+    <div class="cw"><canvas id="otu" role="img" aria-label="Owner type unit comparison"></canvas></div></div>
+</div>
+<script>
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
+var tF={size:9},gC='rgba(255,255,255,0.04)';
+[['otp',[59317,36665,5594,523,934,17],[57634,37808,6131,501,953,13]],['otu',[81151,60186,32124,7954,3883,26],[78284,61230,33950,8153,4178,13]]].forEach(function(x){
+new Chart(document.getElementById(x[0]),{type:'bar',data:{labels:['Individual','Ind.Trust','LLC','Ltd.Prtnr','Corp','Inst.Trust'],datasets:[{label:'2023',data:x[1],backgroundColor:'rgba(39,106,219,0.7)',borderWidth:0},{label:'2025',data:x[2],backgroundColor:'rgba(210,51,63,0.7)',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.y.toLocaleString()}}}},scales:{x:{ticks:{color:'#64748b',font:tF,maxRotation:45},grid:{display:false}},y:{ticks:{color:'#64748b',font:{size:10},callback:function(v){return(v/1000).toFixed(0)+'K'}},grid:{color:gC}}}}});});
+</script>
+</body>
+</html>
