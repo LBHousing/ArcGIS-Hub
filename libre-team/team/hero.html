@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Team Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:60px 28px}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(39,106,219,.1) 0%,transparent 60%);pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(123,78,175,.08) 0%,transparent 60%);pointer-events:none;animation:drift 15s ease-in-out infinite alternate-reverse}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(40px,-30px)}}
+.inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;text-align:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:#1e2540;border:1px solid rgba(39,106,219,.2);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:500;color:#4d8ae8;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.tag .dot{width:6px;height:6px;background:#4d8ae8;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(40px,7vw,72px);font-weight:400;line-height:1.05;margin-bottom:24px;letter-spacing:-.03em}
+h1 em{font-style:italic;color:#F7BA21}
+h1 .thin{font-weight:300;color:#94a3b8}
+.sub{font-size:18px;color:#94a3b8;line-height:1.8;margin:0 auto;font-weight:300;max-width:720px}
+.sub strong{color:#f1f5f9;font-weight:500}
+</style></head>
+<body>
+<section class="hero"><div class="inner">
+  <div class="tag"><span class="dot"></span>Page Update In Progress</div>
+  <h1><span class="thin">The people behind</span><br>the <em>movement.</em></h1>
+  <p class="sub">LiBRE's housing justice work is powered by organizers, analysts, and community members — backed by a <strong>multi-year partnership with Cal State Long Beach</strong> that turned data into action.</p>
+</div></section>
+</body></html>

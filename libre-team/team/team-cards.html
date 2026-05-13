@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px;margin:0 auto}
+.tp{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;text-align:center;position:relative;overflow:hidden}
+.tp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.tp:nth-child(1)::after{background:#276ADB}
+.tp:nth-child(2)::after{background:#F7BA21}
+.tp:nth-child(3)::after{background:#7B4EAF}
+.avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:24px;font-weight:400}
+.tp:nth-child(1) .avatar{background:rgba(39,106,219,.15);color:#4d8ae8}
+.tp:nth-child(2) .avatar{background:rgba(247,186,33,.15);color:#F7BA21}
+.tp:nth-child(3) .avatar{background:rgba(123,78,175,.15);color:#7B4EAF}
+h3{font-size:16px;font-weight:600;margin-bottom:2px}
+.title{font-size:12px;color:#64748b;margin-bottom:8px}
+p{font-size:12px;color:#94a3b8;line-height:1.5}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="grid">
+  <div class="tp">
+    <div class="avatar">AD</div>
+    <h3>Andre D.</h3>
+    <div class="title">Executive Director, LiBRE</div>
+    <p>Leading LiBRE's mission to advance housing justice through organizing, policy advocacy, and community empowerment.</p>
+  </div>
+  <div class="tp">
+    <div class="avatar">KO</div>
+    <h3>Kevin O.</h3>
+    <div class="title">GIS Analyst, LiBRE</div>
+    <p>Building LiBRE's data platform — from interactive maps and eviction dashboards to ownership analysis and Census visualizations.</p>
+  </div>
+  <div class="tp">
+    <div class="avatar">NA</div>
+    <h3>Nazir A.</h3>
+    <div class="title">Executive Director, Long Beach CLT</div>
+    <p>Leading the Long Beach CLT's mission to create permanently affordable, community-owned housing and prevent displacement.</p>
+  </div>
+</div>
+</body></html>

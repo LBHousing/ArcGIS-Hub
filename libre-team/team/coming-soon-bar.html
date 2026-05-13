@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:40px 28px;text-align:center}
+.coming{display:inline-flex;align-items:center;gap:12px;background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 32px;margin-bottom:28px}
+.bar{display:flex;gap:4px;align-items:center}
+.bar span{display:block;width:40px;height:6px;border-radius:3px;background:#252d4a;position:relative;overflow:hidden}
+.bar span::after{content:'';position:absolute;top:0;left:0;height:100%;border-radius:3px;animation:load 3s ease-in-out infinite}
+.bar span:nth-child(1)::after{width:100%;background:#276ADB;animation-delay:0s}
+.bar span:nth-child(2)::after{width:80%;background:#F7BA21;animation-delay:.2s}
+.bar span:nth-child(3)::after{width:60%;background:#7B4EAF;animation-delay:.4s}
+.bar span:nth-child(4)::after{width:40%;background:#34d399;animation-delay:.6s}
+@keyframes load{0%,100%{opacity:.3}50%{opacity:1}}
+.txt{font-size:14px;font-weight:600;color:#94a3b8;letter-spacing:1px;text-transform:uppercase}
+.note{font-size:13px;color:#64748b;line-height:1.7;max-width:520px;margin:0 auto}
+.note a{color:#4d8ae8;text-decoration:none}
+.note a:hover{text-decoration:underline}
+</style></head>
+<body>
+<div class="coming">
+  <div class="bar"><span></span><span></span><span></span><span></span></div>
+  <div class="txt">Full team page coming soon</div>
+</div>
+<p class="note">We're updating this page with full team bios, CSULB student contributors, and project highlights from two years of collaboration. In the meantime, explore our work on the <a href="https://weare-libre.hub.arcgis.com/">GIS Hub</a> or learn more <a href="https://www.wearelbre.org/about">about LiBRE</a>.</p>
+</body></html>
