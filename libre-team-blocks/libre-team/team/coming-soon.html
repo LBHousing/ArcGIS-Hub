@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Team — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;overflow-x:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:60px 28px}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(39,106,219,.1) 0%,transparent 60%);pointer-events:none;animation:drift 20s ease-in-out infinite alternate}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(123,78,175,.08) 0%,transparent 60%);pointer-events:none;animation:drift 15s ease-in-out infinite alternate-reverse}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(40px,-30px)}}
+.inner{position:relative;z-index:1;max-width:1100px;margin:0 auto}
+.tag{display:inline-flex;align-items:center;gap:8px;background:#1e2540;border:1px solid rgba(39,106,219,.2);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:500;color:#4d8ae8;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.tag .dot{width:6px;height:6px;background:#4d8ae8;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(40px,7vw,72px);font-weight:400;line-height:1.05;margin-bottom:24px;letter-spacing:-.03em;text-align:center}
+h1 em{font-style:italic;color:#F7BA21}
+h1 .thin{font-weight:300;color:#94a3b8}
+.sub{font-size:18px;color:#94a3b8;line-height:1.8;margin:0 auto 48px;font-weight:300;max-width:720px;text-align:center}
+.sub strong{color:#f1f5f9;font-weight:500}
+
+.collab{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:40px;margin-bottom:40px;max-width:900px;margin-left:auto;margin-right:auto}
+.collab h2{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;margin-bottom:16px;text-align:center}
+.collab p{font-size:15px;color:#94a3b8;line-height:1.8;margin-bottom:14px;font-weight:300;text-align:center}
+.collab strong{color:#f1f5f9;font-weight:500}
+
+.partners{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto 48px}
+.partner{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:28px;text-align:center}
+.partner .org{font-size:18px;font-weight:600;margin-bottom:4px;color:#f1f5f9}
+.partner .role{font-size:13px;color:#4d8ae8;font-weight:500;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px}
+.partner p{font-size:13px;color:#94a3b8;line-height:1.6;font-weight:300}
+.partner a{color:#4d8ae8;text-decoration:none;font-size:13px}
+.partner a:hover{text-decoration:underline}
+
+.team-preview{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto 48px}
+.tp{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;text-align:center;position:relative;overflow:hidden}
+.tp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px}
+.tp:nth-child(1)::after{background:#276ADB}
+.tp:nth-child(2)::after{background:#F7BA21}
+.tp:nth-child(3)::after{background:#7B4EAF}
+.tp .avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:24px;font-weight:400}
+.tp:nth-child(1) .avatar{background:rgba(39,106,219,.15);color:#4d8ae8}
+.tp:nth-child(2) .avatar{background:rgba(247,186,33,.15);color:#F7BA21}
+.tp:nth-child(3) .avatar{background:rgba(123,78,175,.15);color:#7B4EAF}
+.tp h3{font-size:16px;font-weight:600;margin-bottom:2px}
+.tp .title{font-size:12px;color:#64748b;margin-bottom:8px}
+.tp p{font-size:12px;color:#94a3b8;line-height:1.5}
+
+.coming{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 auto 32px}
+.coming .bar{display:flex;gap:4px;align-items:center}
+.coming .bar span{display:block;width:40px;height:6px;border-radius:3px;background:#252d4a;position:relative;overflow:hidden}
+.coming .bar span::after{content:'';position:absolute;top:0;left:0;height:100%;border-radius:3px;animation:load 3s ease-in-out infinite}
+.coming .bar span:nth-child(1)::after{width:100%;background:#276ADB;animation-delay:0s}
+.coming .bar span:nth-child(2)::after{width:80%;background:#F7BA21;animation-delay:.2s}
+.coming .bar span:nth-child(3)::after{width:60%;background:#7B4EAF;animation-delay:.4s}
+.coming .bar span:nth-child(4)::after{width:40%;background:#34d399;animation-delay:.6s}
+@keyframes load{0%,100%{opacity:.3}50%{opacity:1}}
+.coming .txt{font-size:14px;font-weight:600;color:#94a3b8;letter-spacing:1px;text-transform:uppercase}
+
+.note{font-size:13px;color:#64748b;line-height:1.7;max-width:520px;margin:0 auto;text-align:center}
+.note a{color:#4d8ae8;text-decoration:none}
+.note a:hover{text-decoration:underline}
+
+@media(max-width:700px){.partners,.team-preview{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="hero"><div class="inner">
+  <div class="tag" style="margin:0 auto 24px;display:flex;width:fit-content"><span class="dot"></span>Page Update In Progress</div>
+  <h1><span class="thin">The people behind</span><br>the <em>movement.</em></h1>
+  <p class="sub">LiBRE's housing justice work is powered by organizers, analysts, and community members — backed by a <strong>multi-year partnership with Cal State Long Beach</strong> that turned data into action.</p>
+
+  <div class="collab">
+    <h2>The LiBRE + CSULB Collaboration</h2>
+    <p>Since 2024, LiBRE has partnered with <strong>California State University, Long Beach</strong> to build a first-of-its-kind housing data platform for the city. What began as a collaborative GIS mapping project has grown into a comprehensive public resource — combining Census data, LA County Assessor records, eviction filings, and housing violation data into interactive dashboards and analysis tools.</p>
+    <p>CSULB students and faculty have contributed research, data analysis, and technical development across multiple academic terms, working alongside LiBRE staff to ensure the platform serves the community members who need it most. This partnership demonstrates how <strong>academic institutions and grassroots organizations</strong> can collaborate to produce tools that advance housing justice and informed policymaking.</p>
+  </div>
+
+  <div class="partners">
+    <div class="partner">
+      <div class="org">Long Beach Residents Empowered</div>
+      <div class="role">Housing Justice Organization</div>
+      <p>LiBRE connects renters with the tools, knowledge, and power to fight for housing justice in Long Beach and beyond. Founded in 2016, LiBRE has held 40+ workshops, reached 18,000+ renters, and advocated $2M for eviction defense.</p>
+      <a href="https://www.wearelbre.org/" style="margin-top:8px;display:inline-block">wearelbre.org</a>
+    </div>
+    <div class="partner">
+      <div class="org">Long Beach Community Land Trust</div>
+      <div class="role">Community Land Trust</div>
+      <p>The Long Beach CLT is a member-led organization building community power to develop permanently affordable housing, prevent displacement, and advance community ownership in Long Beach.</p>
+      <a href="https://longbeachclt.org/" style="margin-top:8px;display:inline-block">longbeachclt.org</a>
+    </div>
+  </div>
+
+  <div class="team-preview">
+    <div class="tp">
+      <div class="avatar">AD</div>
+      <h3>Andre D.</h3>
+      <div class="title">Executive Director, LiBRE</div>
+      <p>Leading LiBRE's mission to advance housing justice through organizing, policy advocacy, and community empowerment.</p>
+    </div>
+    <div class="tp">
+      <div class="avatar">KO</div>
+      <h3>Kevin O.</h3>
+      <div class="title">GIS Analyst, LiBRE</div>
+      <p>Building LiBRE's data platform — from interactive maps and eviction dashboards to ownership analysis and Census visualizations.</p>
+    </div>
+    <div class="tp">
+      <div class="avatar">NA</div>
+      <h3>Nazir A.</h3>
+      <div class="title">Executive Director, Long Beach CLT</div>
+      <p>Leading the Long Beach CLT's mission to create permanently affordable, community-owned housing and prevent displacement.</p>
+    </div>
+  </div>
+
+  <div class="coming">
+    <div class="bar"><span></span><span></span><span></span><span></span></div>
+    <div class="txt">Full team page coming soon</div>
+  </div>
+
+  <p class="note">We're updating this page with full team bios, the CSULB student contributors, and project highlights from two years of collaboration. In the meantime, explore our work on the <a href="https://weare-libre.hub.arcgis.com/">GIS Hub</a> or learn more <a href="https://www.wearelbre.org/about">about LiBRE</a>.</p>
+
+</div></section>
+</body>
+</html>
