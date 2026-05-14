@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Updates</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:40px 28px;text-align:center}
+.bar{display:inline-flex;align-items:center;gap:14px;background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 32px;margin-bottom:24px}
+.dots{display:flex;gap:5px;align-items:center}
+.dots span{display:block;width:36px;height:5px;border-radius:3px;background:#252d4a;position:relative;overflow:hidden}
+.dots span::after{content:'';position:absolute;top:0;left:0;height:100%;border-radius:3px;animation:load 3s ease-in-out infinite}
+.dots span:nth-child(1)::after{width:100%;background:#276ADB;animation-delay:0s}
+.dots span:nth-child(2)::after{width:80%;background:#F7BA21;animation-delay:.2s}
+.dots span:nth-child(3)::after{width:60%;background:#7B4EAF;animation-delay:.4s}
+.dots span:nth-child(4)::after{width:40%;background:#34d399;animation-delay:.6s}
+@keyframes load{0%,100%{opacity:.3}50%{opacity:1}}
+.txt{font-size:13px;font-weight:600;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase}
+.note{font-size:13px;color:#64748b;line-height:1.75;max-width:600px;margin:0 auto}
+.note a{color:#4d8ae8;text-decoration:none;font-weight:500}
+.note a:hover{text-decoration:underline}
+.note strong{color:#94a3b8;font-weight:500}
+</style></head>
+<body>
+<div class="bar">
+  <div class="dots"><span></span><span></span><span></span><span></span></div>
+  <div class="txt">More contributors &middot; More updates ahead</div>
+</div>
+<p class="note">This page grows as new students and partner projects come online. If you contributed to LiBRE's data work and don't see yourself credited here, <strong>let us know</strong> &mdash; everyone who builds with us deserves to be findable. In the meantime, explore our work on the <a href="https://weare-libre.hub.arcgis.com/">GIS Hub</a> or learn more <a href="https://www.wearelbre.org/about">about LiBRE</a>.</p>
+</body></html>

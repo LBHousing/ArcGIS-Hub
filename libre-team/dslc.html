@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>LB-C DSLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.wrap{max-width:1100px;margin:0 auto}
+
+.intro{display:grid;grid-template-columns:380px 1fr;gap:32px;margin-bottom:40px;align-items:start}
+.flyer{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;padding:12px}
+.flyer img{width:100%;display:block;border-radius:6px}
+.flyer .cap{font-size:11px;color:#64748b;text-align:center;padding:10px 4px 4px;letter-spacing:.5px}
+.intro-text{padding-top:8px}
+.eyebrow{display:inline-block;font-size:11px;font-weight:600;color:#34d399;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+h2{font-family:'Instrument Serif',serif;font-size:30px;font-weight:400;margin-bottom:16px;line-height:1.15}
+.lede{font-size:15px;color:#cbd5e1;line-height:1.85;margin-bottom:14px;font-weight:300}
+.lede strong{color:#f1f5f9;font-weight:500}
+.intro-text p{font-size:14px;color:#94a3b8;line-height:1.75;font-weight:300}
+
+.section-label{font-size:11px;font-weight:600;color:#34d399;letter-spacing:2px;text-transform:uppercase;margin:0 0 16px 4px}
+
+.faculty{background:#1e2540;border:1px solid rgba(52,211,153,.2);border-radius:12px;padding:24px 26px;margin-bottom:28px;display:flex;align-items:center;gap:22px}
+.faculty .avatar{width:72px;height:72px;border-radius:50%;flex-shrink:0;background:rgba(52,211,153,.15);color:#34d399;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:26px}
+.faculty .info h3{font-size:18px;font-weight:600;color:#f1f5f9;margin-bottom:3px}
+.faculty .info .r{font-size:12px;color:#34d399;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;margin-bottom:6px}
+.faculty .info p{font-size:13px;color:#94a3b8;line-height:1.6;font-weight:300}
+
+.students{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+.s{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:22px 18px;text-align:center;position:relative;overflow:hidden}
+.s::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:#34d399}
+.s .avatar{width:56px;height:56px;border-radius:50%;margin:0 auto 12px;background:rgba(52,211,153,.12);color:#34d399;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:20px}
+.s h3{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:2px}
+.s .prog{font-size:12px;color:#94a3b8;font-weight:500;margin-bottom:4px}
+.s .inst{font-size:11px;color:#64748b;letter-spacing:.3px}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:28px}
+.proj{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;position:relative}
+.proj .num{font-family:'Instrument Serif',serif;font-size:36px;line-height:1;color:#34d399;opacity:.5;position:absolute;top:18px;right:22px}
+.proj h4{font-size:16px;font-weight:600;color:#f1f5f9;margin-bottom:6px;padding-right:50px}
+.proj .tools{font-size:11px;color:#34d399;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+.proj p{font-size:13px;color:#94a3b8;line-height:1.65;font-weight:300}
+
+.deck-links{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.deck-links .lbl{font-size:13px;color:#94a3b8;font-weight:300}
+.deck-links .lbl strong{color:#f1f5f9;font-weight:500;display:block;margin-bottom:2px;font-size:14px}
+.deck-links a{display:inline-block;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.25);color:#34d399;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:500;text-decoration:none;letter-spacing:.5px;margin-left:8px}
+.deck-links a:hover{background:rgba(52,211,153,.18)}
+
+@media(max-width:880px){
+  .intro{grid-template-columns:1fr}
+  .students{grid-template-columns:repeat(2,1fr)}
+  .projects{grid-template-columns:1fr}
+}
+@media(max-width:520px){.students{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="wrap" id="dslc-section">
+
+  <div class="intro">
+    <div class="flyer">
+      <img src="img/dslc-flyer.png" alt="LB-Compton Data Science Learning Community Research Presentations flyer">
+      <div class="cap">Research presentations &middot; CSULB Hall of Science &middot; Aug 2025</div>
+    </div>
+    <div class="intro-text">
+      <div class="eyebrow">Summer 2025 cohort</div>
+      <h2>Long Beach&ndash;Compton Data Science Learning Community</h2>
+      <p class="lede">A six-student research cohort &mdash; faculty-guided, community-partnered &mdash; that spent summer 2025 turning <strong>LiBRE's housing data</strong> into spatial analyses, hotspot maps, and policy questions. Their work explored eviction rates against historical redlining, rent burden distribution, opportunity zone outcomes, and the community storytelling behind the numbers.</p>
+      <p>The DSLC is a multi-institution program connecting students with community partners. The full network includes Color Compton, the Center for Health Equity Research, Firme Coding, the Long Beach Office of Equity, and faculty from CSULB and CSUN.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Faculty advisor</div>
+  <div class="faculty">
+    <div class="avatar">JO</div>
+    <div class="info">
+      <h3>Jonathan Pando Ocón</h3>
+      <div class="r">Faculty Lead &middot; CSULB Geography</div>
+      <p>Advised the summer 2025 cohort's housing research projects with LiBRE, coordinating methodology, supervision, and the final presentations across all four research tracks.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Student researchers</div>
+  <div class="students">
+
+    <div class="s">
+      <div class="avatar">BP</div>
+      <h3>Brandon Pacheco</h3>
+      <div class="prog">High School Researcher</div>
+      <div class="inst">Cabrillo High School</div>
+    </div>
+
+    <div class="s">
+      <div class="avatar">AV</div>
+      <h3>Areli Valentin</h3>
+      <div class="prog">Management Info Systems</div>
+      <div class="inst">CSULB</div>
+    </div>
+
+    <div class="s">
+      <div class="avatar">DW</div>
+      <h3>Dillon Wilson</h3>
+      <div class="prog">Statistics</div>
+      <div class="inst">CSULB</div>
+    </div>
+
+    <div class="s">
+      <div class="avatar">EV</div>
+      <h3>Ernesto Villalpando</h3>
+      <div class="prog">MS Applied Statistics</div>
+      <div class="inst">CSULB</div>
+    </div>
+
+    <div class="s">
+      <div class="avatar">RD</div>
+      <h3>Raminder Singh Dubb</h3>
+      <div class="prog">MS Applied Statistics</div>
+      <div class="inst">CSULB</div>
+    </div>
+
+    <div class="s">
+      <div class="avatar">TH</div>
+      <h3>Truc (Tina) Hoang</h3>
+      <div class="prog">MS Applied Statistics</div>
+      <div class="inst">CSULB</div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Research tracks</div>
+  <div class="projects">
+
+    <div class="proj">
+      <div class="num">01</div>
+      <h4>Evictions &times; Redlining</h4>
+      <div class="tools">Spatial analysis &middot; Hotspot mapping</div>
+      <p>Spatial overlay of eviction filings against 1939 HOLC redlining maps and 2020 Census demographic data &mdash; testing the relationship between historic disinvestment and present-day eviction concentration during and after COVID-19.</p>
+    </div>
+
+    <div class="proj">
+      <div class="num">02</div>
+      <h4>Community Storytelling</h4>
+      <div class="tools">Narrative &middot; Story maps</div>
+      <p>"You can evict people, not memories." A narrative track translating the eviction data into community-facing storytelling about displacement, memory, and the people behind the filings.</p>
+    </div>
+
+    <div class="proj">
+      <div class="num">03</div>
+      <h4>Rent Burden &amp; Contracts</h4>
+      <div class="tools">Web scraping &middot; Ridgeline plots</div>
+      <p>Mapping changes in the overall distribution of rental contracts over time using Zillow listings, ACS data, and historical redlining boundaries &mdash; with simulated data filling gaps where historical contract data sits behind paywalls.</p>
+    </div>
+
+    <div class="proj">
+      <div class="num">04</div>
+      <h4>Policy &amp; Land Use</h4>
+      <div class="tools">RHNA data &middot; OZ analysis</div>
+      <p>Examining whether housing policies like Opportunity Zones, ADU laws, and density bonuses actually increase development and affordability in Long Beach &mdash; comparing housing permit trends in policy-targeted versus non-targeted areas.</p>
+    </div>
+
+  </div>
+
+  <div class="deck-links">
+    <div class="lbl">
+      <strong>Final research presentations</strong>
+      End-of-cohort presentations, July 11, 2025
+    </div>
+    <div>
+      <a href="https://docs.google.com/presentation/d/1YitB-aBE90M36PGuVUajePezoUIyZY1ps62ke2y4uXM/edit" target="_blank" rel="noopener">View the deck &rarr;</a>
+    </div>
+  </div>
+
+</div>
+</body></html>

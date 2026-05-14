@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Collaborations</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.wrap{max-width:1100px;margin:0 auto}
+.intro{text-align:center;max-width:720px;margin:0 auto 28px}
+.intro p{font-size:14px;color:#94a3b8;line-height:1.7;font-weight:300}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:860px;margin:0 auto}
+.c{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;position:relative;display:flex;flex-direction:column}
+.c::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:12px 0 0 12px}
+.c.env::before{background:#34d399}
+.c.clt::before{background:#7B4EAF}
+.c.tbd::before{background:rgba(148,163,184,.25)}
+.c.tbd{opacity:.55;border-style:dashed}
+.c.tbd::after{content:'OPEN SLOT';position:absolute;top:14px;right:18px;font-size:9px;color:#64748b;letter-spacing:1.5px;font-weight:600}
+.head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.avatar{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:18px}
+.c.env .avatar{background:rgba(52,211,153,.12);color:#34d399}
+.c.clt .avatar{background:rgba(123,78,175,.12);color:#9b75c4}
+.c.tbd .avatar{background:rgba(148,163,184,.08);color:#64748b}
+.head h3{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:1px}
+.head .r{font-size:11px;color:#94a3b8;font-weight:500;text-transform:uppercase;letter-spacing:1px}
+.proj{font-size:11px;color:#34d399;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.c.clt .proj{color:#9b75c4}
+h4{font-size:15px;font-weight:600;color:#f1f5f9;margin-bottom:8px}
+p{font-size:13px;color:#94a3b8;line-height:1.65;font-weight:300;margin-bottom:auto;padding-bottom:14px}
+.credit{font-size:11px;color:#64748b;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);line-height:1.5}
+.credit strong{color:#94a3b8;font-weight:500}
+@media(max-width:880px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="wrap">
+
+  <div class="intro">
+    <p>Beyond LiBRE staff and our partner network, individual student contributors are actively building specific projects within the platform. Each is credited here by name and project so their work is findable beyond graduation.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="c env">
+      <div class="head">
+        <div class="avatar">SF</div>
+        <div>
+          <h3>Samuel Flexo</h3>
+          <div class="r">Student Assistant &middot; CSULB</div>
+        </div>
+      </div>
+      <div class="proj">In development</div>
+      <h4>Environmental Impact Dashboard</h4>
+      <!-- TBD: Tighten project scope description with Samuel's specific focus areas. -->
+      <p>Building a citywide dashboard surfacing environmental impacts on Long Beach communities &mdash; including air quality indicators and other environmental health data layered over census and housing geographies.</p>
+      <div class="credit">Guided by <strong>Dr. Gary Hytrek</strong> &middot; CSULB</div>
+    </div>
+
+    <div class="c clt">
+      <div class="head">
+        <div class="avatar">PL</div>
+        <div>
+          <h3>Paul Labelle</h3>
+          <div class="r">Collaborator &middot; LB Community Land Trust</div>
+        </div>
+      </div>
+      <div class="proj">Ongoing</div>
+      <h4>CLT Mapping Initiative</h4>
+      <!-- TBD: Fill in specifics of the CLT mapping project (scope, deliverables, stage). -->
+      <p>Producing maps and spatial analysis in support of Long Beach CLT's acquisition, organizing, and outreach work &mdash; helping identify properties, parcels, and neighborhoods most aligned with the community land trust model.</p>
+      <div class="credit">Partner project with <strong>Long Beach CLT</strong></div>
+    </div>
+
+  </div>
+
+</div>
+</body></html>

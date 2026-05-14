@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Partners</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
+.wrap{max-width:1100px;margin:0 auto}
+.row{display:grid;gap:16px;margin-bottom:16px}
+.row.three{grid-template-columns:repeat(3,1fr)}
+.row.two{grid-template-columns:repeat(2,1fr);max-width:740px;margin-left:auto;margin-right:auto}
+.row:last-child{margin-bottom:0}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:26px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.card.libre::after{background:#276ADB}
+.card.nalcab::after{background:#F7BA21}
+.card.laane::after{background:#D2333F}
+.card.csulb::after{background:#7B4EAF}
+.card.dslc::after{background:#34d399}
+.org{font-size:17px;font-weight:600;margin-bottom:4px;color:#f1f5f9}
+.role{font-size:11px;color:#94a3b8;font-weight:600;margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px}
+.card.libre .role{color:#4d8ae8}
+.card.nalcab .role{color:#F7BA21}
+.card.laane .role{color:#e57078}
+.card.csulb .role{color:#9b75c4}
+.card.dslc .role{color:#34d399}
+p{font-size:13px;color:#94a3b8;line-height:1.65;font-weight:300;margin-bottom:auto;padding-bottom:14px}
+p a{color:#4d8ae8;font-size:inherit;font-weight:400;letter-spacing:0;text-decoration:underline;text-decoration-color:rgba(77,138,232,.4);text-underline-offset:2px}
+p a:hover{text-decoration-color:#4d8ae8}
+a{color:#4d8ae8;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.3px}
+a:hover{text-decoration:underline}
+@media(max-width:780px){.row.three,.row.two{grid-template-columns:1fr;max-width:none}}
+</style></head>
+<body>
+<div class="wrap">
+
+  <div class="row three">
+    <div class="card libre">
+      <div class="org">Long Beach Residents Empowered</div>
+      <div class="role">Housing justice · Founded 2016</div>
+      <p>LiBRE connects renters with the tools, knowledge, and power to fight for housing justice in Long Beach and beyond. Through 40+ workshops, LiBRE has reached 18,000+ renters and advocated $2M for eviction defense, while leading research, policy work, and community organizing across the city.</p>
+      <a href="https://www.wearelbre.org/">wearelbre.org &rarr;</a>
+    </div>
+
+    <div class="card nalcab">
+      <div class="org">NALCAB</div>
+      <div class="role">Funder · 2022 grantor</div>
+      <!-- TBD: Tighten one-line description of NALCAB's specific grant scope. Current language is general public knowledge. -->
+      <p>The National Association for Latino Community Asset Builders is a network of mission-driven organizations advancing housing, finance, and economic equity in Latino communities. NALCAB provided the initial grant that funded LiBRE's housing violations data work and the public-facing data platform.</p>
+      <a href="https://nalcab.org/">nalcab.org &rarr;</a>
+    </div>
+
+    <div class="card laane">
+      <div class="org">LAANE</div>
+      <div class="role">Coalition partner · Block the Cuts campaign</div>
+      <p>The Los Angeles Alliance for a New Economy organizes coalitions of community groups, labor, and faith leaders to advance economic justice. LiBRE and LAANE are collaborating on data and analysis for the <a href="https://www.wearelbre.org/build-long-beach">Block the Cuts campaign</a> &mdash; a Long Beach parcel tax proposal to fund affordable housing, emergency services, and infrastructure, sponsored alongside the Long Beach Firefighters Association.</p>
+      <a href="https://www.laane.org/">laane.org &rarr;</a>
+    </div>
+  </div>
+
+  <div class="row two">
+    <div class="card csulb">
+      <div class="org">CSULB Department of Geography</div>
+      <div class="role">Academic origins · MSGISci program</div>
+      <!-- TBD: User may want to refine framing - the relationship is informal/individual-faculty rather than institutional. -->
+      <p>The Department of Geography at California State University, Long Beach is the academic home where this project began &mdash; the MSGISci program produced the original 2019 thesis work and has continued to be a source of student researchers and faculty collaborators advancing housing justice through applied GIS.</p>
+      <a href="https://www.csulb.edu/department-of-geography">csulb.edu/department-of-geography &rarr;</a>
+    </div>
+
+    <div class="card dslc">
+      <div class="org">LB&ndash;C Data Science Learning Community</div>
+      <div class="role">Research network · Student projects</div>
+      <!-- TBD: Confirm formal name, governance structure, and primary host institution. -->
+      <p>A multi-organization data science research program connecting students from CSULB, CSUN, Compton College, LBCC, LBUSD, and CUSD with community partners including LiBRE, Color Compton, Center for Health Equity Research, Firme Coding, and the Long Beach Office of Equity. LiBRE hosts annual student research projects through the network.</p>
+      <a href="#dslc-section">See the team &darr;</a>
+    </div>
+  </div>
+
+</div>
+</body></html>
