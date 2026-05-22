@@ -24,4 +24,17 @@ p strong{color:#f1f5f9;font-weight:500}
   <p>By utilizing <strong>Geographic Information System (GIS) technology</strong>, we strive to convey the historical challenges in our city that contribute today to the displacement of renters and their families. As viewers navigate these maps, it becomes clear how marginalized communities have been disproportionately impacted by evictions, rent increases, and unsafe living conditions.</p>
 </div>
 </body>
+  <script>
+    (function(){
+        function sendHeight(){
+              var h=document.documentElement.scrollHeight||document.body.scrollHeight;
+              window.parent.postMessage({type:'libre-resize',height:h},'*');
+        }
+        if(document.readyState==='loading'){
+              document.addEventListener('DOMContentLoaded',sendHeight);
+        } else { sendHeight(); }
+        new ResizeObserver(sendHeight).observe(document.body);
+    })();
+  </script>
+  </script>
 </html>
