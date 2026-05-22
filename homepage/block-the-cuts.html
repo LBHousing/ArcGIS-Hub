@@ -31,5 +31,18 @@ p strong{color:#f1f5f9;font-weight:500}
     <a href="https://www.longbeach.gov/cityclerk/elections/petitions/" class="btn-o" target="_blank">View petition details ↗</a>
   </div>
 </div>
+  <script>
+    (function(){
+        function sendHeight(){
+              var h=document.documentElement.scrollHeight||document.body.scrollHeight;
+              window.parent.postMessage({type:'libre-resize',height:h},'*');
+        }
+        if(document.readyState==='loading'){
+              document.addEventListener('DOMContentLoaded',sendHeight);
+        } else { sendHeight(); }
+        new ResizeObserver(sendHeight).observe(document.body);
+    })();
+  </script>
+  </script>
 </body>
 </html>
