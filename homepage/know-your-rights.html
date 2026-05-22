@@ -32,5 +32,18 @@ p strong{color:#34d399;font-weight:600}
     <p>Contact <strong>LiBRE</strong> for Know Your Rights workshops and tenant organizing support. Visit <strong>wearelbre.org</strong></p>
   </div>
 </div>
+  <script>
+    (function(){
+        function sendHeight(){
+              var h=document.documentElement.scrollHeight||document.body.scrollHeight;
+              window.parent.postMessage({type:'libre-resize',height:h},'*');
+        }
+        if(document.readyState==='loading'){
+              document.addEventListener('DOMContentLoaded',sendHeight);
+        } else { sendHeight(); }
+        new ResizeObserver(sendHeight).observe(document.body);
+    })();
+  </script>
+  </script>
 </body>
 </html>
