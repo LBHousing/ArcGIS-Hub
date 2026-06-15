@@ -1,6 +1,6 @@
-# Block the Cuts & Build LB — "Who Owns Long Beach" Hub Layout Guide
+# Block the Cuts & Build LB: "Who Owns Long Beach" Hub Layout Guide
 
-**Updated build** — consolidated 2018–2026 Assessor analysis, dwelling-units only.
+**Updated build:** consolidated 2018-2026 Assessor analysis, dwelling-units only.
 Replace `BASEURL` with: `https://lbhousing.github.io/ArcGIS-Hub`
 All Hub section backgrounds: `#0a0e1a`
 
@@ -24,13 +24,12 @@ URL:    BASEURL/build/marquee.html
 Height: 56
 ```
 
-### ROW 3 — Section header "01 Citywide Ownership" (text card)
+### ROW 3 — Section header "Citywide Ownership" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">01</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(39,106,219,.12);color:#4d8ae8;border:1px solid rgba(39,106,219,.2);margin-bottom:12px;">Citywide Ownership</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">Every parcel. Every owner type. The full picture.</h2>
-  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">All 177,588 dwelling units in Long Beach, by who holds title in 2026 — and how each category shifted since 2018.</p>
+  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">All 177,588 dwelling units in Long Beach, by who holds title in 2026, and how each category shifted since 2018.</p>
 </div>
 ```
 
@@ -51,13 +50,12 @@ Height: 440
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 7 — Section header "02 The Form Shift" (text card)
+### ROW 7 — Section header "The Form Shift" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">02</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(210,51,63,.1);color:#D2333F;border:1px solid rgba(210,51,63,.2);margin-bottom:12px;">The Form Shift</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">The housing didn't disappear. The owners changed shape.</h2>
-  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">Long Beach's rental stock grew by just +4,277 units in nine years. What changed is the legal form of ownership — away from people, toward entities.</p>
+  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">Long Beach's rental stock grew by just +4,277 units in nine years. The legal form of ownership shifted away from people toward entities.</p>
 </div>
 ```
 
@@ -84,12 +82,11 @@ Height: 340
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 12 — Section header "03 The Trust Loophole" (text card)
+### ROW 12 — Section header "The Trust Loophole" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">03</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(123,78,175,.1);color:#9d6fc7;border:1px solid rgba(123,78,175,.2);margin-bottom:12px;">The Trust Loophole</span>
-  <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">Individual trusts get homeowner treatment — even at institutional scale.</h2>
+  <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">Individual trusts get homeowner treatment even at institutional scale.</h2>
   <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">2,929 trusts own multiple properties; 139 average 25 units each.</p>
 </div>
 ```
@@ -111,13 +108,12 @@ Height: 340
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 16 — Section header "04 Ownership Concentration" (text card)
+### ROW 16 — Section header "Ownership Concentration" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">04</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(210,51,63,.1);color:#D2333F;border:1px solid rgba(210,51,63,.2);margin-bottom:12px;">Ownership Concentration</span>
-  <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">A few owners hold a lot — but the very top isn't getting bigger.</h2>
-  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">5,368 multi-property owners control 44,107 units — 24.8% of the city. Yet the largest owners' share has stayed flat since 2018.</p>
+  <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">A few owners hold a lot, but the very top isn't getting bigger.</h2>
+  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">5,368 multi-property owners control 44,107 units (24.8% of the city). The largest owners' share has stayed flat since 2018.</p>
 </div>
 ```
 
@@ -132,13 +128,12 @@ Height: 520
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 19 — Section header "05 The Builders" (text card)
+### ROW 19 — Section header "The Builders" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">05</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(52,211,153,.08);color:#34d399;border:1px solid rgba(52,211,153,.2);margin-bottom:12px;">The Builders</span>
-  <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">The biggest gainers built new housing — split down the middle.</h2>
-  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">The ten owners who added the most units weren't buying up the city. They were building it — half luxury, half affordable. Every affordable project needed public money.</p>
+  <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">The biggest gainers built new housing, split evenly between market-rate and affordable.</h2>
+  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">The ten owners who added the most units weren't buying up the city. They were building it, half luxury and half affordable. Every affordable project needed public money.</p>
 </div>
 ```
 
@@ -153,13 +148,12 @@ Height: 1200
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 22 — Section header "06 The Quiet Acquisition" (text card)
+### ROW 22 — Section header "The Quiet Acquisition" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">06</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(247,186,33,.1);color:#F7BA21;border:1px solid rgba(247,186,33,.2);margin-bottom:12px;">The Quiet Acquisition</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">Meanwhile, the old, naturally-affordable buildings changed hands.</h2>
-  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">1,553 older rental buildings passed from individual owners into LLCs, LPs, and corporations — two ways.</p>
+  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">1,553 older rental buildings passed from individual owners into LLCs, LPs, and corporations through two paths.</p>
 </div>
 ```
 
@@ -174,10 +168,9 @@ Height: 1180
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 25 — Section header "07 Largest Owners" (text card)
+### ROW 25 — Section header "Largest Owners" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">07</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(247,186,33,.1);color:#F7BA21;border:1px solid rgba(247,186,33,.2);margin-bottom:12px;">Largest Owners</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">The 25 biggest entity owners in Long Beach.</h2>
   <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">The top owner controls 538 units on just 2 parcels. Hotels, storage, and other non-dwellings removed.</p>
@@ -195,10 +188,9 @@ Height: 900
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 28 — Section header "08 The Build Case" (text card)
+### ROW 28 — Section header "The Build Case" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">08</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(52,211,153,.08);color:#34d399;border:1px solid rgba(52,211,153,.2);margin-bottom:12px;">The Build Case</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">The city is building. Just nowhere near enough.</h2>
 </div>
@@ -215,10 +207,9 @@ Height: 710
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 31 — Section header "09 Renter Protections" (text card)
+### ROW 31 — Section header "Renter Protections" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">09</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(39,106,219,.12);color:#4d8ae8;border:1px solid rgba(39,106,219,.2);margin-bottom:12px;">Renter Protections</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">What this means for tenant protections.</h2>
 </div>
@@ -235,13 +226,12 @@ Height: 540
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 34 — Section header "10 Historical Context" (text card)
+### ROW 34 — Section header "Historical Context" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">10</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(39,106,219,.12);color:#4d8ae8;border:1px solid rgba(39,106,219,.2);margin-bottom:12px;">Historical Context</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">Flat housing supply. Soaring value.</h2>
-  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">Long Beach added almost no net housing — but assessed value climbed from $41.6B to $63.3B.</p>
+  <p style="font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;color:#94a3b8;margin:0;font-weight:300;">Long Beach added almost no net housing, yet assessed value climbed from $41.6B to $63.3B.</p>
 </div>
 ```
 
@@ -256,10 +246,9 @@ Height: 420
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);"></div>
 ```
 
-### ROW 37 — Section header "11 Know Your Rights" (text card)
+### ROW 37 — Section header "Know Your Rights" (text card)
 ```html
 <div style="padding:40px 0 10px;">
-  <div style="font-family:'Segoe UI',system-ui,sans-serif;font-size:80px;font-weight:300;color:#252d4a;line-height:1;">11</div>
   <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;padding:5px 14px;border-radius:6px;background:rgba(52,211,153,.08);color:#34d399;border:1px solid rgba(52,211,153,.2);margin-bottom:12px;">Know Your Rights</span>
   <h2 style="font-family:'Segoe UI',system-ui,sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;margin:0 0 6px;">You may have more protection than you think.</h2>
 </div>
@@ -279,41 +268,41 @@ Height: 390
 |-----|------|---------|--------|
 | 1 | iframe | Hero + counters | 540 |
 | 2 | iframe | Marquee | 56 |
-| 3 | text card | "01 Citywide Ownership" | — |
+| 3 | text card | Citywide Ownership | n/a |
 | 4 | iframe | Metric bars (6) | 300 |
 | 5 | iframe | Donut + nine-year change | 440 |
-| 6 | text card | Divider | — |
-| 7 | text card | "02 The Form Shift" | — |
+| 6 | text card | Divider | n/a |
+| 7 | text card | The Form Shift | n/a |
 | 8 | iframe | Form-shift tiles (3) | 150 |
 | 9 | iframe | Stacked-area chart | 540 |
 | 10 | iframe | Shift narrative | 340 |
-| 11 | text card | Divider | — |
-| 12 | text card | "03 The Trust Loophole" | — |
+| 11 | text card | Divider | n/a |
+| 12 | text card | The Trust Loophole | n/a |
 | 13 | iframe | Trust metric bars (3) | 160 |
 | 14 | iframe | Trust narrative | 340 |
-| 15 | text card | Divider | — |
-| 16 | text card | "04 Concentration" | — |
+| 15 | text card | Divider | n/a |
+| 16 | text card | Ownership Concentration | n/a |
 | 17 | iframe | Concentration chart + narrative | 520 |
-| 18 | text card | Divider | — |
-| 19 | text card | "05 The Builders" | — |
+| 18 | text card | Divider | n/a |
+| 19 | text card | The Builders | n/a |
 | 20 | iframe | Builders split + 10 cards | 1200 |
-| 21 | text card | Divider | — |
-| 22 | text card | "06 The Quiet Acquisition" | — |
+| 21 | text card | Divider | n/a |
+| 22 | text card | The Quiet Acquisition | n/a |
 | 23 | iframe | Acquisition + acquirers + MHP | 1180 |
-| 24 | text card | Divider | — |
-| 25 | text card | "07 Largest Owners" | — |
+| 24 | text card | Divider | n/a |
+| 25 | text card | Largest Owners | n/a |
 | 26 | iframe | Top 25 horizontal bar | 900 |
-| 27 | text card | Divider | — |
-| 28 | text card | "08 The Build Case" | — |
+| 27 | text card | Divider | n/a |
+| 28 | text card | The Build Case | n/a |
 | 29 | iframe | Build-case ladder + tiles | 710 |
-| 30 | text card | Divider | — |
-| 31 | text card | "09 Renter Protections" | — |
+| 30 | text card | Divider | n/a |
+| 31 | text card | Renter Protections | n/a |
 | 32 | iframe | Protections narrative | 540 |
-| 33 | text card | Divider | — |
-| 34 | text card | "10 Historical Context" | — |
+| 33 | text card | Divider | n/a |
+| 34 | text card | Historical Context | n/a |
 | 35 | iframe | Historical charts (2) | 420 |
-| 36 | text card | Divider | — |
-| 37 | text card | "11 Know Your Rights" | — |
+| 36 | text card | Divider | n/a |
+| 37 | text card | Know Your Rights | n/a |
 | 38 | iframe | Know Your Rights | 390 |
 
 **Total: 17 GitHub iframes + 11 section headers + 10 dividers**
@@ -322,10 +311,10 @@ Height: 390
 
 ## What changed from the previous build
 
-- **New sections:** 02 The Form Shift (tiles + stacked-area), 05 The Builders, 06 The Quiet Acquisition, 08 The Build Case.
+- **New sections:** The Form Shift (tiles + stacked-area), The Builders, The Quiet Acquisition, The Build Case.
 - **New files:** `formshift-tiles.html`, `formshift-chart.html`, `builders.html`, `acquisition.html`, `buildcase.html`, `concentration.html` (chart + narrative combined).
-- **Replaced:** `chart-concentration.html` → `concentration.html`. `charts-owner-type.html` is retired (its 2023-vs-2025 bars are superseded by the nine-year stacked-area chart). The old files can stay as an archive or be deleted.
-- **Data:** rebuilt on the parcel-level 2018–2026 Assessor roll, **dwelling units only** (hotels, motels, self-storage, cemeteries, churches, schools, medical, retail, and office excluded). Headline 2026 figures: 177,588 units / 98,396 parcels; entity-controlled 25.9%; LLCs +11,148 (54.6%) since 2018.
+- **Replaced:** `chart-concentration.html` is superseded by `concentration.html`. `charts-owner-type.html` is retired; its 2023-vs-2025 bars are covered by the nine-year stacked-area chart. Both old files are kept as archive.
+- **Data:** rebuilt on the parcel-level 2018-2026 Assessor roll, **dwelling units only** (hotels, motels, self-storage, cemeteries, churches, schools, medical, retail, and office excluded). Headline 2026 figures: 177,588 units / 98,396 parcels; entity-controlled 25.9%; LLCs +11,148 (54.6%) since 2018.
 
 ---
 
@@ -343,10 +332,10 @@ git push origin main
 
 ```
 ArcGIS-Hub/
-├── home/          ← Homepage
-├── charts/        ← District Statistics charts
-├── districts/     ← District cards D1-D9
-├── conditions/    ← Housing Conditions
-├── build/         ← Who Owns LB (17 iframe cards + this README)
+├── home/          <- Homepage
+├── charts/        <- District Statistics charts
+├── districts/     <- District cards D1-D9
+├── conditions/    <- Housing Conditions
+├── build/         <- Who Owns LB (17 iframe cards + this README)
 └── README.md
 ```
