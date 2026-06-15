@@ -1,42 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Top 25</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Top 25</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script><style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
-.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:24px;max-width:1100px;margin:0 auto}
-h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:12px}
-.lg{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:10px;font-size:11px;color:#64748b}
-.lg span{display:flex;align-items:center;gap:4px}.lg .d{width:8px;height:8px;border-radius:2px}
-.cw{position:relative;width:100%;height:680px}
-</style>
-</head>
-<body>
-<div class="card">
-  <h3>Top 25 Entity Owners by Unit Count (2025)</h3>
-  <div class="cs">Multi-property entity owners only | Color = entity type</div>
-  <div class="lg">
-    <span><span class="d" style="background:#D2333F"></span>LLC</span>
-    <span><span class="d" style="background:#F7BA21"></span>Ltd. Partnership</span>
-    <span><span class="d" style="background:#7B4EAF"></span>Corporation</span>
-    <span><span class="d" style="background:#276ADB"></span>Ind. Trust</span>
-  </div>
-  <div class="cw"><canvas id="t25" role="img" aria-label="Top 25 entity owners horizontal bar chart"></canvas></div>
-</div>
-<script>
-Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';
-(function(){
-var lb=["2009 CUSA COMMUNITY OWNER LLC","AVANATH NORTHPOINTE LP","SPRINGDALE WEST PRESERVATION LP","AVANATH SEAPORT LLC","DECRO LONG BEACH LP","PENN PROPERTIES LLC","LYON 1900 OCEAN OWNER LLC","CENTURY VILLAGES AT CABRILLO INC","GELT VOLTA PINE FEE OWNER LLC","SW PARK AVENUE LLC","404 PINE LP","SPP CHANNEL POINT LLC","GSIC II PINE OWNER LP","CENTURY VILLAGE AT CABRILLO INC","LING, PAUL S & EDYTHE I TRS","MIRACLE MILE PROPERTIES LP","ATLANTIC AVE HOLDINGS LLC","MG PINE AT 6TH APTS LLC","KARAHALIOS, GEORGE M TR","HEBISH, NADY Z CO TR","MERCY HOUSING CA 71 LP","ACKERFIELD 2 LLC","HFH AMG LLC","SBG REC LLC","WP LBMF LLC AND"];
-var dt=[538,528,410,358,332,310,284,274,271,247,221,212,211,202,201,184,169,163,157,153,148,143,127,123,122];
-var ty=["LLC","LP","LP","LLC","LP","LLC","LLC","Corp","LLC","LLC","LP","LLC","LP","Corp","Trust","LP","LLC","LLC","Trust","Trust","LP","LLC","LLC","LLC","LLC"];
-var cm={"LLC":"#D2333F","LP":"#F7BA21","Corp":"#7B4EAF","Trust":"#276ADB"};
-new Chart(document.getElementById('t25'),{type:'bar',data:{labels:lb,datasets:[{data:dt,backgroundColor:ty.map(function(t){return cm[t]}),borderWidth:0,borderRadius:3,barPercentage:.7}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.x.toLocaleString()+' units ('+ty[c.dataIndex]+')'}}}},scales:{x:{ticks:{color:'#64748b',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#94a3b8',font:{size:9}},grid:{display:false}}}}});
-})();
-</script>
-</body>
-</html>
+body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;-webkit-font-smoothing:antialiased;padding:0 28px}
+.wrap{max-width:1080px;margin:0 auto}em{font-style:italic}
+.bl{color:#4d8ae8}.rd{color:#D2333F}.pp{color:#F7BA21}.gn{color:#34d399}.pu{color:#9d6fc7}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gridm{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px}
+h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64748b;margin-bottom:14px}
+.cw{position:relative;width:100%;height:300px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px;font-size:12px;color:#94a3b8}
+.legend span{display:flex;align-items:center;gap:6px}.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.m{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px}
+.m .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.m .lb{font-size:13px;color:#94a3b8}.m .vl{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.m .pc{font-size:12px;color:#64748b;margin-bottom:8px}
+.track{height:6px;background:#0a0e1a;border-radius:3px;overflow:hidden}.fill{height:100%;border-radius:3px;transition:width 1.4s ease}
+.m .dt{font-size:11px;margin-top:7px;font-weight:600}.dr{color:#D2333F}.dg{color:#34d399}.dn{color:#64748b}
+.narr{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:34px}
+.narr h2,.narr h4{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;margin-bottom:14px}
+.narr p{font-size:15px;color:#94a3b8;margin-bottom:13px;line-height:1.7;font-weight:300}.narr strong{color:#f1f5f9;font-weight:600}
+.hlbox{background:rgba(247,186,33,.06);border-left:3px solid #F7BA21;padding:14px 18px;border-radius:0 8px 8px 0;margin-top:16px;font-size:14px;color:#94a3b8;line-height:1.65}
+.hlbox.blue{background:rgba(39,106,219,.06);border-color:#276ADB}.hlbox strong{color:#f1f5f9}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px}
+.tile .n{font-size:32px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}.tile .l{font-size:13px;color:#94a3b8;margin-top:8px;line-height:1.45}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.sp{border-radius:14px;padding:20px 22px;border:1px solid rgba(255,255,255,.06)}
+.sp.m2{background:linear-gradient(135deg,rgba(210,51,63,.14),rgba(210,51,63,.04))}.sp.a2{background:linear-gradient(135deg,rgba(52,211,153,.12),rgba(39,106,219,.05))}
+.sp .k{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}.sp.m2 .k{color:#D2333F}.sp.a2 .k{color:#34d399}
+.sp .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}.sp .d{font-size:13px;color:#94a3b8;margin-top:8px;line-height:1.5}
+.acard{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px 20px;position:relative;overflow:hidden}
+.acard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.acard.market::before{background:#D2333F}.acard.affordable::before{background:#34d399}.acard.public::before{background:#276ADB}
+.actop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.acname{font-size:16px;font-weight:600;line-height:1.25}
+.acbuild{font-size:12.5px;color:#64748b;margin-bottom:12px}.tags{display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0}
+.tg{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.tg.form{background:rgba(255,255,255,.06);color:#94a3b8}.tg.market{background:rgba(210,51,63,.14);color:#e8636d}.tg.affordable{background:rgba(52,211,153,.12);color:#34d399}.tg.public{background:rgba(39,106,219,.14);color:#4d8ae8}
+.acrow{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-top:6px}
+.acdelta{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}.acdelta small{font-size:12px;font-weight:500;color:#64748b;display:block;margin-top:3px}
+.market .acdelta{color:#e8636d}.affordable .acdelta{color:#34d399}.public .acdelta{color:#4d8ae8}
+.acblurb{font-size:12.5px;color:#94a3b8;line-height:1.55;margin-top:13px;padding-top:13px;border-top:1px solid rgba(255,255,255,.05)}
+.mech{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+.mc{border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,.06);background:#1e2540}
+.mc .v{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}.mc .t{font-size:14px;font-weight:600;color:#f1f5f9;margin-top:10px}.mc .d{font-size:13px;color:#94a3b8;margin-top:6px;line-height:1.5}
+.mc.r .v{color:#F7BA21}.mc.a .v{color:#D2333F}
+.acq-card{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:18px 20px;border-left:3px solid #D2333F}
+.acq-name{font-size:15.5px;font-weight:600}.acq-meta{font-size:12px;color:#64748b;margin-top:3px}
+.acq-stats{display:flex;gap:18px;margin-top:13px;flex-wrap:wrap}.acq-stats .n{font-size:19px;font-weight:700;color:#e8636d;font-variant-numeric:tabular-nums;line-height:1}.acq-stats .l{font-size:11px;color:#94a3b8;margin-top:3px}
+.acq-zip{font-size:11.5px;color:#64748b;margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.05)}
+.mhp{background:linear-gradient(135deg,rgba(247,186,33,.1),rgba(247,186,33,.02));border:1px solid rgba(247,186,33,.2);border-radius:16px;padding:24px 26px;margin-top:16px}
+.mhp .lab{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#F7BA21;margin-bottom:10px}.mhp p{font-size:15px;color:#e2e8f0;line-height:1.7;font-weight:300}.mhp strong{color:#fff;font-weight:600}
+.ladder .bar{margin-bottom:18px}.ladder .bar:last-child{margin-bottom:0}
+.bl-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}.bl-name{font-size:14.5px;color:#cbd5e1;font-weight:500}.bl-val{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.ltrack{height:12px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden}.lfill{height:100%;border-radius:6px;width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}.lcap{font-size:12px;color:#64748b;margin-top:6px;line-height:1.5}
+.kicker{background:linear-gradient(135deg,rgba(52,211,153,.1),rgba(39,106,219,.06));border:1px solid rgba(52,211,153,.2);border-radius:16px;padding:28px 26px;margin-top:18px}
+.kicker p{font-size:16.5px;color:#e2e8f0;line-height:1.7;font-weight:300}.kicker strong{color:#fff;font-weight:600}.kicker .big{font-family:'Instrument Serif',serif;font-size:22px;color:#34d399;font-style:italic;display:block;margin-top:14px;line-height:1.3}
+.rights{background:rgba(52,211,153,.03);border:1px solid rgba(52,211,153,.2);border-radius:14px;padding:34px}
+.rights h2{font-family:'Instrument Serif',serif;font-size:24px;color:#34d399;margin-bottom:14px}.rights p{font-size:15px;color:#94a3b8;line-height:1.7;font-weight:300;margin-bottom:10px}
+.rights .item{font-size:14px;color:#94a3b8;margin-bottom:6px}.rights .item .arr{color:#34d399;font-weight:700}.rights .item strong{color:#34d399}.rights .item a{color:#F7BA21;font-weight:600;text-decoration:none}
+.foot{font-size:12px;color:#64748b;line-height:1.6;margin-top:14px}
+@media(max-width:760px){.grid2,.grid3,.split,.mech,.tiles{grid-template-columns:1fr}.cw{height:260px}}
+</style></head><body><div class="wrap"><div class="card"><h3>Top 25 Entity Owners by Unit Count (2026)</h3><div class="cs">Multi-property &amp; large single-building entity owners · color = entity type</div>
+ <div class="legend"><span><i style="background:#D2333F"></i>LLC</span><span><i style="background:#F7BA21"></i>Ltd. partnership</span><span><i style="background:#9d6fc7"></i>Corporation</span></div>
+ <div class="cw" style="height:720px"><canvas id="t25"></canvas></div>
+ <p class="foot">Self-storage, hotels, and other non-dwelling owners removed. Many of the largest are single large complexes (1–2 parcels), not scattered portfolios.</p></div></div><script>Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';Chart.defaults.font.family="'Outfit',sans-serif";var t=[["2009 CUSA COMMUNITY OWNER LLC", 538, 2, "LLC"], ["AVANATH NORTHPOINTE LP", 528, 2, "LP"], ["SPRINGDALE WEST PRESERVATION LP", 410, 2, "LP"], ["EQR FRESCA 2009 LP", 385, 1, "LP"], ["AVANATH SEAPORT LP", 358, 33, "LP"], ["AGSM RENOVATION LP", 348, 1, "LP"], ["ABP PARCEL 6 LLC", 336, 1, "LLC"], ["DECRO LONG BEACH LP", 332, 18, "LP"], ["RAYMOND J KIRKPATRICK VIII LLC", 331, 1, "LLC"], ["LB PARADISE GARDENS LLC", 319, 1, "LLC"], ["PENN PROPERTIES LLC", 310, 24, "LLC"], ["CENTURY CITY VIEW LP", 296, 1, "LP"], ["ESSEX PORTFOLIO L P", 296, 1, "LP"], ["IMT CAPITAL IV GALLERY LLC", 291, 1, "LLC"], ["LYON 1900 OCEAN OWNER LLC", 284, 1, "LLC"], ["CENTURY VILLAGES AT CABRILLO INC", 274, 4, "Corp"], ["GELT VOLTA PINE FEE OWNER LLC", 271, 2, "LLC"], ["SW PARK AVENUE LLC", 247, 4, "LLC"], ["BERRO FAMILY HOLDINGS LLC", 239, 21, "LLC"], ["707 EAST OCEAN BOULEVARD LP", 223, 1, "LP"], ["PPF AMLI 245 WEST BROADWAY LLC", 223, 1, "LLC"], ["404 PINE LP", 221, 5, "LP"], ["LONG BEACH ASTER LLC", 218, 1, "LLC"], ["SPP CHANNEL POINT LLC", 212, 12, "LLC"], ["GSIC II PINE OWNER LP", 211, 30, "LP"]],cm={LLC:'#D2333F',LP:'#F7BA21',Corp:'#9d6fc7',Other:'#64748b'};
+new Chart(document.getElementById('t25'),{type:'bar',data:{labels:t.map(function(x){return x[0]}),datasets:[{data:t.map(function(x){return x[1]}),backgroundColor:t.map(function(x){return cm[x[3]]||'#64748b'}),borderWidth:0,borderRadius:3,barPercentage:.74}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){var r=t[c.dataIndex];return r[1].toLocaleString()+' units · '+r[2]+' parcel'+(r[2]>1?'s':'')+' · '+r[3]}}}},scales:{x:{ticks:{font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{font:{size:9},color:'#94a3b8'},grid:{display:false}}}}});</script></body></html>

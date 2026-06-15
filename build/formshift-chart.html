@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Shift Narrative</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Form Shift Chart</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script><style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;-webkit-font-smoothing:antialiased;padding:0 28px}
 .wrap{max-width:1080px;margin:0 auto}em{font-style:italic}
@@ -62,7 +62,13 @@ h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64
 .rights .item{font-size:14px;color:#94a3b8;margin-bottom:6px}.rights .item .arr{color:#34d399;font-weight:700}.rights .item strong{color:#34d399}.rights .item a{color:#F7BA21;font-weight:600;text-decoration:none}
 .foot{font-size:12px;color:#64748b;line-height:1.6;margin-top:14px}
 @media(max-width:760px){.grid2,.grid3,.split,.mech,.tiles{grid-template-columns:1fr}.cw{height:260px}}
-</style></head><body><div class="wrap"><div class="narr"><h2>Why the density matters</h2>
- <p>Entities own a small slice of <strong>parcels</strong> but control a large share of <strong>units</strong> — they own the multi-unit buildings where most renters live. LLCs average 6.8 units per parcel; limited partnerships average 20.3.</p>
- <p>A policy that targets entity-owned property reaches far more tenants per parcel than one targeting individual owners. That's why the <strong style="color:#F7BA21">Block the Cuts &amp; Build Long Beach Ordinance</strong> exempts single-family homeowners earning under $250,000 — it targets institutional-scale ownership, not families.</p>
- <div class="hlbox"><strong>The pattern:</strong> Since 2018, individuals shed 9,309 units while LLCs absorbed 11,148. Because total housing barely grew, most of that LLC gain came from buying up homes that already existed.</div></div></div></body></html>
+</style></head><body><div class="wrap"><div class="card"><h3>Who holds Long Beach's housing, year by year</h3><div class="cs">Share of all dwelling units by owner type</div>
+ <div class="legend"><span><i style="background:#64748b"></i>Individuals &amp; family trusts</span><span><i style="background:#276ADB"></i>LLCs</span><span><i style="background:#D2333F"></i>Other corporate</span><span><i style="background:#34d399"></i>Public &amp; civic</span></div>
+ <div class="cw" style="height:340px"><canvas id="area"></canvas></div>
+ <p class="foot">Individuals and family trusts are shown as one band: the Assessor reclassified many trust-held homes back to "individual" in the 2025 roll — a labeling change, not a real transfer. Combining them removes that artifact.</p></div></div><script>Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';Chart.defaults.font.family="'Outfit',sans-serif";var S={"individual": [80.76, 79.93, 78.91, 81.93, 77.47, 76.35, 75.64, 74.55, 73.57], "llc": [11.77, 12.46, 13.16, 11.6, 14.31, 15.31, 16.02, 16.71, 17.77], "othercorp": [6.97, 7.06, 7.4, 5.54, 7.64, 7.84, 7.81, 8.21, 8.13], "civic": [0.5, 0.55, 0.53, 0.93, 0.58, 0.5, 0.53, 0.54, 0.53]},Y=[2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+new Chart(document.getElementById('area'),{type:'line',data:{labels:Y,datasets:[
+ {label:'Individuals & family trusts',data:S.individual,backgroundColor:'rgba(100,116,139,.45)',borderColor:'#64748b',borderWidth:1,fill:true,tension:.3,pointRadius:0},
+ {label:'LLCs',data:S.llc,backgroundColor:'rgba(39,106,219,.55)',borderColor:'#276ADB',borderWidth:1.5,fill:true,tension:.3,pointRadius:0},
+ {label:'Other corporate',data:S.othercorp,backgroundColor:'rgba(210,51,63,.45)',borderColor:'#D2333F',borderWidth:1,fill:true,tension:.3,pointRadius:0},
+ {label:'Public & civic',data:S.civic,backgroundColor:'rgba(52,211,153,.45)',borderColor:'#34d399',borderWidth:1,fill:true,tension:.3,pointRadius:0}]},
+ options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:11}}},y:{stacked:true,min:0,max:100,grid:{color:'rgba(255,255,255,0.04)'},ticks:{font:{size:11},callback:function(v){return v+'%'}}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.y.toFixed(1)+'%'}}}},animation:{duration:1300}}});</script></body></html>
