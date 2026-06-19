@@ -1,0 +1,141 @@
+year,owner_type,match_confidence,total_filings,notice_to_vacate,restorations,distinct_owners
+2018,LLC,High,331,215,116,124
+2018,Individual,High,228,145,83,112
+2018,Individual Trust,High,188,126,62,99
+2018,LLC,Medium,100,63,37,57
+2018,Limited Partnership,High,88,57,31,25
+2018,Individual Trust,Medium,84,51,33,48
+2018,Individual,Medium,71,46,25,41
+2018,Other/Unknown,High,69,43,26,21
+2018,Unmatched,Unmatched,47,32,15,0
+2018,Corporation,High,33,21,12,13
+2018,Other/Unknown,Medium,19,11,8,9
+2018,Limited Partnership,Medium,10,8,2,8
+2018,Corporation,Medium,10,6,4,7
+2018,Non-Profit,High,10,6,4,4
+2018,Association/HOA,High,7,4,3,2
+2018,Religious,High,4,2,2,2
+2018,Religious,Medium,3,2,1,2
+2018,Government,High,2,1,1,1
+2018,Non-Profit,Medium,2,1,1,1
+2019,LLC,High,333,222,111,121
+2019,Individual Trust,High,270,170,100,118
+2019,Individual,High,223,140,83,104
+2019,Individual Trust,Medium,89,51,38,51
+2019,Limited Partnership,High,88,54,34,25
+2019,Other/Unknown,High,88,51,37,23
+2019,Individual,Medium,85,56,29,50
+2019,LLC,Medium,81,55,26,48
+2019,Unmatched,Unmatched,62,40,22,0
+2019,Corporation,High,43,28,15,14
+2019,Other/Unknown,Medium,15,11,4,7
+2019,Corporation,Medium,13,9,4,5
+2019,Limited Partnership,Medium,11,8,3,7
+2019,Association/HOA,High,11,8,3,1
+2019,Religious,High,8,4,4,2
+2019,Non-Profit,High,6,4,2,3
+2019,Non-Profit,Medium,4,2,2,3
+2019,Association/HOA,Medium,1,1,0,1
+2020,LLC,High,103,55,48,50
+2020,Individual Trust,High,66,39,27,43
+2020,Individual,High,65,40,25,41
+2020,Individual,Medium,29,18,11,19
+2020,LLC,Medium,28,20,8,19
+2020,Unmatched,Unmatched,23,13,10,0
+2020,Limited Partnership,High,22,15,7,10
+2020,Other/Unknown,High,21,11,10,9
+2020,Individual Trust,Medium,19,12,7,14
+2020,Other/Unknown,Medium,8,4,4,4
+2020,Corporation,High,7,5,2,2
+2020,Non-Profit,High,6,3,3,2
+2020,Corporation,Medium,5,4,1,3
+2020,Association/HOA,High,3,2,1,1
+2020,Religious,Medium,3,2,1,1
+2020,Limited Partnership,Medium,3,3,0,3
+2020,Non-Profit,Medium,1,0,1,1
+2021,LLC,High,115,70,45,52
+2021,Individual,High,78,43,35,44
+2021,Individual Trust,High,56,31,25,33
+2021,Individual,Medium,38,22,16,24
+2021,Limited Partnership,High,32,16,16,16
+2021,LLC,Medium,27,16,11,20
+2021,Individual Trust,Medium,25,17,8,16
+2021,Corporation,High,22,13,9,11
+2021,Other/Unknown,High,16,7,9,8
+2021,Unmatched,Unmatched,16,8,8,0
+2021,Corporation,Medium,12,7,5,3
+2021,Other/Unknown,Medium,12,7,5,4
+2021,Limited Partnership,Medium,4,2,2,2
+2021,Association/HOA,High,3,2,1,1
+2022,LLC,High,308,190,118,113
+2022,Individual Trust,High,180,112,68,96
+2022,Individual,High,155,93,62,76
+2022,LLC,Medium,109,70,39,49
+2022,Individual,Medium,89,54,35,44
+2022,Individual Trust,Medium,61,35,26,38
+2022,Unmatched,Unmatched,56,38,18,0
+2022,Limited Partnership,High,53,38,15,18
+2022,Other/Unknown,High,41,26,15,18
+2022,Corporation,High,31,19,12,13
+2022,Other/Unknown,Medium,26,14,12,11
+2022,Corporation,Medium,16,9,7,7
+2022,Limited Partnership,Medium,6,3,3,5
+2022,Non-Profit,Medium,4,2,2,2
+2022,Association/HOA,High,2,2,0,1
+2022,Religious,High,2,1,1,1
+2022,Non-Profit,High,2,2,0,2
+2022,Government,High,2,2,0,2
+2023,LLC,High,515,320,195,155
+2023,Individual,High,274,184,90,130
+2023,Individual Trust,High,244,156,88,131
+2023,LLC,Medium,128,82,46,66
+2023,Limited Partnership,High,122,77,45,33
+2023,Individual,Medium,98,60,38,53
+2023,Unmatched,Unmatched,88,52,36,0
+2023,Individual Trust,Medium,73,49,24,49
+2023,Other/Unknown,High,69,47,22,28
+2023,Corporation,High,36,25,11,15
+2023,Corporation,Medium,32,22,10,10
+2023,Other/Unknown,Medium,28,19,9,13
+2023,Limited Partnership,Medium,20,13,7,14
+2023,Religious,High,8,5,3,2
+2023,Non-Profit,High,6,2,4,4
+2023,Non-Profit,Medium,3,2,1,2
+2023,Association/HOA,High,2,2,0,2
+2024,LLC,High,411,295,116,140
+2024,Individual Trust,High,227,170,57,135
+2024,Individual,High,225,148,77,116
+2024,Limited Partnership,High,124,89,35,36
+2024,Individual,Medium,85,62,23,59
+2024,Individual Trust,Medium,77,56,21,49
+2024,LLC,Medium,75,54,21,51
+2024,Other/Unknown,High,68,44,24,26
+2024,Unmatched,Unmatched,65,49,16,0
+2024,Other/Unknown,Medium,39,23,16,14
+2024,Corporation,High,34,25,9,15
+2024,Corporation,Medium,24,17,7,7
+2024,Limited Partnership,Medium,14,11,3,10
+2024,Non-Profit,High,7,6,1,6
+2024,Entity Trust,High,2,2,0,1
+2024,Association/HOA,High,1,0,1,1
+2024,Religious,High,1,1,0,1
+2024,Government,High,1,1,0,1
+2025,LLC,High,242,152,90,94
+2025,Individual,High,172,120,52,84
+2025,Individual Trust,High,109,76,33,73
+2025,Limited Partnership,High,68,45,23,27
+2025,LLC,Medium,53,31,22,31
+2025,Individual,Medium,40,26,14,26
+2025,Unmatched,Unmatched,38,26,12,0
+2025,Individual Trust,Medium,35,21,14,28
+2025,Other/Unknown,High,34,21,13,18
+2025,Corporation,High,20,15,5,8
+2025,Other/Unknown,Medium,11,6,5,7
+2025,Limited Partnership,Medium,8,3,5,4
+2025,Corporation,Medium,7,7,0,4
+2025,Non-Profit,High,5,3,2,3
+2025,Association/HOA,High,3,3,0,1
+2025,Entity Trust,High,2,1,1,1
+2025,Religious,High,2,1,1,1
+2025,Non-Profit,Medium,1,1,0,1
+2025,Government,High,1,1,0,1

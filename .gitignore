@@ -1,0 +1,12 @@
+# ── Never publish: individual-level or re-identifiable eviction data ──
+*PRIVATE*
+*tenant_key*
+*geocoded*
+*heatmap*
+*with_owner*
+lb_evictions_records.csv
+lb_evictions_cases.csv
+
+# ── Local-only working data: keep raw files here; never committed ──
+/raw/
+/private-data/
