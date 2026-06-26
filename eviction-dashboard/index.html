@@ -138,6 +138,9 @@ footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--border);font-
 @media (max-width:920px){
   h1{font-size:2.4rem}
   .grid-map,.grid-2{grid-template-columns:1fr}
+  .card{max-width:100%;box-sizing:border-box;overflow:hidden}
+  .leaflet-container{width:100%!important}
+  .chart-wrap canvas{max-width:100%!important;height:auto!important}
   .source{text-align:left}
   header{align-items:flex-start}
 }
@@ -311,6 +314,7 @@ function yearMax(){
 /* ── Map ── */
 function initMap(){
   map=L.map('map',{zoomControl:true,scrollWheelZoom:false,maxZoom:15,minZoom:10}).setView([33.804,-118.16],11.5);
+    window.addEventListener('resize',()=>{setTimeout(()=>{if(map&&map.invalidateSize)map.invalidateSize();},200);});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',
     {attribution:'© OpenStreetMap © CARTO',maxZoom:19,subdomains:'abcd'}).addTo(map);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png',
