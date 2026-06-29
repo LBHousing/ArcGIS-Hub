@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filings by owner type | LiBRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#0a0e1a; --surface:#1e2540; --surface-2:#161b30; --raise:#252d50;
+  --border:rgba(255,255,255,.08); --border-2:rgba(255,255,255,.14);
+  --text:#e8ebf5; --muted:#8b93b0; --faint:#5c6480;
+  --blue:#276ADB; --yellow:#F7BA21; --red:#D2333F; --green:#34d399; --purple:#9d6fc7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:transparent;overflow-x:hidden;max-width:100%}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;padding:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px;max-width:100%;overflow:hidden}
+.kicker{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.5rem;letter-spacing:.3px}
+.chart-wrap{position:relative;height:230px;margin-top:14px}
+.chart-wrap canvas{max-width:100%!important}
+.note{font-size:.76rem;color:var(--muted);margin-top:12px;line-height:1.6}
+.note strong{color:var(--text);font-weight:600}
+@media(max-width:520px){ .card{padding:16px 16px} .chart-wrap{height:300px} h2{font-size:1.3rem} }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker">Who files · 2018–2025 assessor-matched subset</div>
+  <h2>Filings by owner type</h2>
+  <div class="chart-wrap"><canvas id="ownerChart"></canvas></div>
+  <p class="note">Owner attribution covers only the 2018–2025 records matched to LA County DS04 Assessor parcels. The full recovered dataset is not yet owner-attributed, so these counts undercount total filings.</p>
+</div>
+<script>
+const ownerType = [{"type":"LLC","notices":1910,"lockouts":1049},{"type":"Individual","notices":1257,"lockouts":698},{"type":"Individual Trust","notices":1172,"lockouts":631},{"type":"Limited Partnership","notices":442,"lockouts":231},{"type":"Other/Unknown","notices":345,"lockouts":219},{"type":"Unmatched","notices":258,"lockouts":137},{"type":"Corporation","notices":232,"lockouts":113},{"type":"Non-Profit","notices":34,"lockouts":23},{"type":"Association/HOA","notices":24,"lockouts":9},{"type":"Religious","notices":18,"lockouts":13},{"type":"Government","notices":5,"lockouts":1},{"type":"Entity Trust","notices":3,"lockouts":1}];
+const fmt = n => (n==null?'—':Number(n).toLocaleString());
+const muted = '#8b93b0', grid = 'rgba(255,255,255,.08)';
+new Chart(document.getElementById('ownerChart'), {
+  type:'bar',
+  data:{
+    labels: ownerType.map(x=>x.type),
+    datasets:[
+      {label:'Notices', data:ownerType.map(x=>x.notices), backgroundColor:'rgba(247,186,33,.85)', stack:'s', borderRadius:3},
+      {label:'Lockouts', data:ownerType.map(x=>x.lockouts), backgroundColor:'rgba(210,51,63,.8)', stack:'s', borderRadius:3}
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{labels:{color:muted, font:{size:11}, boxWidth:12}} },
+    scales:{
+      x:{ stacked:true, ticks:{color:muted, font:{size:10}, maxRotation:60, minRotation:0}, grid:{display:false} },
+      y:{ stacked:true, beginAtZero:true, ticks:{color:muted, font:{size:10}}, grid:{color:grid} }
+    }
+  }
+});
+</script>
+</body>
+</html>
