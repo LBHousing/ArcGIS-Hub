@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top eviction filers | LiBRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e1a; --surface:#1e2540; --surface-2:#161b30; --raise:#252d50;
+  --border:rgba(255,255,255,.08); --border-2:rgba(255,255,255,.14);
+  --text:#e8ebf5; --muted:#8b93b0; --faint:#5c6480;
+  --blue:#276ADB; --yellow:#F7BA21; --red:#D2333F; --green:#34d399; --purple:#9d6fc7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:transparent;overflow-x:hidden;max-width:100%}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;padding:4px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px 24px;max-width:100%;overflow:hidden}
+.kicker{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.5rem;letter-spacing:.3px;margin-bottom:14px}
+.table-wrap{overflow:auto;max-height:560px;border-radius:10px;border:1px solid var(--border);max-width:100%}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+thead th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);text-align:left;
+  padding:11px 13px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid var(--border-2)}
+td{padding:9px 13px;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr:hover{background:var(--surface-2)}
+.rank{color:var(--faint);font-variant-numeric:tabular-nums}
+.owner{font-weight:600;color:var(--text)}
+.chip{display:inline-block;font-size:.66rem;font-weight:600;padding:2px 8px;border-radius:11px;
+  background:rgba(39,106,219,.16);color:#7da9ec;border:1px solid rgba(39,106,219,.25)}
+.num-n{color:var(--yellow);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.num-l{color:var(--red);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+td.r{text-align:right;font-variant-numeric:tabular-nums}
+.vol{height:6px;border-radius:3px;background:var(--yellow);opacity:.55;display:inline-block;vertical-align:middle}
+.note{font-size:.76rem;color:var(--muted);margin-top:12px;line-height:1.6}
+.note strong{color:var(--text);font-weight:600}
+@media(max-width:520px){
+  .card{padding:16px 16px}
+  h2{font-size:1.3rem}
+  .table-wrap{max-height:340px}
+  table{font-size:.78rem}
+  thead th,td{padding:8px 10px}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker">Largest filers · 2018–2025 assessor-matched subset</div>
+  <h2>Top eviction filers</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>#</th><th>Owner / entity</th><th>Type</th>
+        <th>Notices</th><th>Lockouts</th><th>Units</th>
+        <th>Years</th><th>ZIPs</th><th>Notice volume</th>
+      </tr></thead>
+      <tbody id="ownerBody"></tbody>
+    </table>
+  </div>
+  <p class="note">Scroll to view all <strong>40</strong> filers. Owner attribution covers the 2018–2025 records matched to LA County DS04 Assessor parcels. Individual owners are anonymized (IND_####).</p>
+</div>
+<script>
+const topOwners = [{"name":"AVANATH SEAPORT LLC","type":"LLC","notices":133,"lockouts":119,"units":21,"years":7,"zips":1},{"name":"2009 CUSA COMMUNITY OWNER LLC","type":"LLC","notices":92,"lockouts":42,"units":538,"years":8,"zips":1},{"name":"RWBP PROMENADE LP","type":"Limited Partnership","notices":59,"lockouts":20,"units":84,"years":7,"zips":1},{"name":"IND_0001","type":"Individual Trust","notices":57,"lockouts":42,"units":17,"years":7,"zips":2},{"name":"MADISON APTS CORP","type":"Corporation","notices":47,"lockouts":25,"units":34,"years":8,"zips":1},{"name":"CENTURY VILLAGES AT CABRILLO INC","type":"Corporation","notices":47,"lockouts":22,"units":120,"years":8,"zips":1},{"name":"MG PINE AT 6TH APARTMENTS","type":"Other/Unknown","notices":47,"lockouts":29,"units":1,"years":7,"zips":1},{"name":"IND_0002","type":"Individual","notices":43,"lockouts":20,"units":1,"years":7,"zips":1},{"name":"SYLMAR FOOTHILL LLC AND","type":"LLC","notices":43,"lockouts":12,"units":33,"years":6,"zips":1},{"name":"DECRO LONG BEACH LP","type":"Limited Partnership","notices":42,"lockouts":25,"units":44,"years":8,"zips":3},{"name":"WSC INVESTMENT PARTNERS LLC","type":"LLC","notices":38,"lockouts":16,"units":24,"years":8,"zips":4},{"name":"MASUDA INVESTMENTS LLC","type":"LLC","notices":33,"lockouts":26,"units":55,"years":5,"zips":1},{"name":"SBG REC LLC","type":"LLC","notices":32,"lockouts":11,"units":59,"years":7,"zips":3},{"name":"LB OCEANAIRE DEVELOPMENT LLC","type":"LLC","notices":32,"lockouts":19,"units":216,"years":7,"zips":1},{"name":"PENN PROPERTIES LLC","type":"LLC","notices":30,"lockouts":21,"units":24,"years":7,"zips":3},{"name":"STELLAR FAMILY INVESTMENT CO LLC","type":"LLC","notices":30,"lockouts":17,"units":20,"years":4,"zips":2},{"name":"IND_0003","type":"Individual Trust","notices":29,"lockouts":16,"units":93,"years":7,"zips":1},{"name":"OCEAN STRUCTURE LP","type":"Limited Partnership","notices":29,"lockouts":17,"units":12,"years":8,"zips":3},{"name":"CMIF III FOUNTAIN VIEW LLC","type":"LLC","notices":28,"lockouts":18,"units":153,"years":7,"zips":1},{"name":"230 LIME AVENUE LLC","type":"LLC","notices":28,"lockouts":17,"units":18,"years":6,"zips":1},{"name":"IND_0004","type":"Individual","notices":27,"lockouts":1,"units":27,"years":2,"zips":1},{"name":"404 PINE LP","type":"Limited Partnership","notices":27,"lockouts":18,"units":51,"years":7,"zips":1},{"name":"707 EAST OCEAN BOULEVARD LLC","type":"LLC","notices":26,"lockouts":16,"units":223,"years":8,"zips":1},{"name":"BLACKSTONE APARTMENTS LLC","type":"LLC","notices":24,"lockouts":12,"units":144,"years":7,"zips":1},{"name":"IND_0005","type":"Individual","notices":24,"lockouts":23,"units":1,"years":8,"zips":1},{"name":"SHORELINE DEVELOPMENT PARTNERS","type":"Limited Partnership","notices":24,"lockouts":16,"units":0,"years":4,"zips":1},{"name":"BRE ESA P PORTFOLIO LLC","type":"LLC","notices":24,"lockouts":24,"units":134,"years":4,"zips":1},{"name":"IND_0006","type":"Individual","notices":23,"lockouts":24,"units":1,"years":4,"zips":1},{"name":"TE LONG BEACH INVESTORS LLC","type":"LLC","notices":23,"lockouts":14,"units":129,"years":7,"zips":1},{"name":"4701 CLAIR DEL ASSOC","type":"Association/HOA","notices":22,"lockouts":7,"units":108,"years":7,"zips":1},{"name":"LYON 1900 OCEAN OWNER LLC","type":"LLC","notices":21,"lockouts":10,"units":284,"years":7,"zips":1},{"name":"PACIFIC VIEW","type":"Other/Unknown","notices":19,"lockouts":18,"units":201,"years":8,"zips":1},{"name":"HCI 333 EAST OCEAN OWNER LP","type":"Limited Partnership","notices":19,"lockouts":6,"units":469,"years":7,"zips":1},{"name":"IMT CAPITAL IV GALLERY LLC","type":"LLC","notices":19,"lockouts":13,"units":291,"years":6,"zips":1},{"name":"IND_0007","type":"Individual","notices":19,"lockouts":12,"units":74,"years":7,"zips":2},{"name":"FRISCHER LLC","type":"LLC","notices":18,"lockouts":14,"units":9,"years":6,"zips":2},{"name":"OCEAN STRUCTURE INC","type":"Corporation","notices":18,"lockouts":5,"units":16,"years":8,"zips":3},{"name":"IND_0008","type":"Individual","notices":18,"lockouts":19,"units":17,"years":6,"zips":3},{"name":"LB CAPITAL FORESIGHT","type":"Other/Unknown","notices":18,"lockouts":10,"units":63,"years":7,"zips":1},{"name":"IND_0009","type":"Individual Trust","notices":17,"lockouts":3,"units":41,"years":7,"zips":3}];
+const fmt = n => (n==null?'—':Number(n).toLocaleString());
+const max = Math.max(...topOwners.map(d=>d.notices),1);
+const tbody = document.getElementById('ownerBody');
+tbody.innerHTML = topOwners.map((d,i)=>(
+  '<tr>'+
+  '<td class="rank">'+(i+1)+'</td>'+
+  '<td class="owner">'+(d.name||'—')+'</td>'+
+  '<td><span class="chip">'+(d.type||'—')+'</span></td>'+
+  '<td class="num-n r">'+fmt(d.notices)+'</td>'+
+  '<td class="num-l r">'+fmt(d.lockouts)+'</td>'+
+  '<td class="r">'+fmt(d.units)+'</td>'+
+  '<td class="r">'+(d.years||'—')+'</td>'+
+  '<td class="r">'+(d.zips||'—')+'</td>'+
+  '<td><span class="vol" style="width:'+Math.round(d.notices/max*110)+'px"></span></td>'+
+  '</tr>'
+)).join('');
+</script>
+</body>
+</html>
