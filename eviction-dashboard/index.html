@@ -348,7 +348,7 @@ function addDistricts(){
     style:styleDistrict,
     onEachFeature:(f,l)=>{
       const p=f.properties, d=p.COUNCIL_NUMBER, rep=p.REPRESENTATIVE||'';
-      l.bindTooltip(`<b>District ${d}</b>${rep?'<br>'+rep:''}`,{sticky:true,className:'lb-tip'});
+      l.bindTooltip(`<b>District ${d}</b>`,{sticky:true,className:'lb-tip'});
       l.on('click',()=>{document.getElementById('districtFilter').value=d;district=+d;refreshDistricts();panTo(d);});
     }
   }).addTo(map);
