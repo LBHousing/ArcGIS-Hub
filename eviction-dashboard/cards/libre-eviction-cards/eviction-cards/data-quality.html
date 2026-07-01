@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What was wrong with the old eviction data | LiBRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--surface:#1e2540;--surface-2:#161b30;--raise:#252d50;--border:rgba(255,255,255,.08);--border-2:rgba(255,255,255,.14);--text:#e8ebf5;--muted:#8b93b0;--faint:#5c6480;--blue:#276ADB;--yellow:#F7BA21;--red:#D2333F;--green:#34d399;--purple:#9d6fc7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--surface);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;padding:22px 24px}
+.kicker{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.55rem;letter-spacing:.3px}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.6}
+.note strong{color:var(--text);font-weight:600}
+.chart-wrap{position:relative;height:300px;margin-top:14px}
+/* funnel */
+.funnel-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:10px 0 20px}
+.funnel-noticed{font-family:'Instrument Serif',serif;font-size:1.5rem}
+.funnel-noticed b{color:var(--yellow);font-weight:400}
+.funnel-conv{font-size:.86rem;color:var(--muted)}
+.funnel-conv b{color:var(--text);font-weight:600}
+.funnel-bar{display:flex;height:62px;border-radius:10px;overflow:hidden;border:1px solid var(--border-2)}
+.fseg{display:flex;flex-direction:column;justify-content:center;padding:0 18px;color:#fff;min-width:0}
+.fseg.lock{background:linear-gradient(180deg,#d2333f,#a8202b)}
+.fseg.left{background:linear-gradient(180deg,#5b4a86,#43356b)}
+.fseg .n{font-family:'Instrument Serif',serif;font-size:1.55rem;line-height:1;white-space:nowrap}
+.fseg .l{font-size:.74rem;opacity:.92;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnel-foot{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.fchip{font-size:.76rem;color:var(--muted)}
+.fchip b{color:var(--text);font-weight:600}
+.legend-key{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;color:var(--muted)}
+.swatch{width:12px;height:12px;border-radius:3px;display:inline-block}
+/* table */
+.table-wrap{overflow-x:auto;max-height:520px;border-radius:10px;border:1px solid var(--border);margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+thead th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);text-align:left;padding:11px 13px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid var(--border-2)}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr:hover{background:rgba(255,255,255,.025)}
+.chip{display:inline-block;font-size:.66rem;font-weight:600;padding:2px 8px;border-radius:11px;background:rgba(39,106,219,.16);color:#7da9ec;border:1px solid rgba(39,106,219,.25)}
+.num-n{color:var(--yellow);font-weight:600}
+.num-l{color:var(--red);font-weight:600}
+.vol{height:6px;border-radius:3px;background:var(--yellow);opacity:.55;display:inline-block;vertical-align:middle}
+/* policy grid */
+.policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;margin-top:10px}
+.policy-grid p{font-size:.92rem;color:var(--text);line-height:1.66}
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin-top:14px}
+.stat{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:17px 19px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent,var(--blue))}
+.stat.y{--accent:var(--yellow)}.stat.r{--accent:var(--red)}.stat.b{--accent:var(--blue)}.stat.g{--accent:var(--green)}.stat.p{--accent:var(--purple)}
+.stat h3{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:'Instrument Serif',serif;font-size:2.1rem;line-height:1.05;margin-top:6px}
+.stat .s{font-size:.72rem;color:var(--muted);margin-top:4px}
+@media (max-width:620px){.policy-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body style="border-left:3px solid var(--red)">
+<div class="kicker">About this data</div>
+<h2>What was wrong with the old numbers</h2>
+<p style="font-size:.92rem;line-height:1.66;color:var(--text);margin:6px 0 0">For years the public eviction figures for Long Beach were both incomplete and mislabeled. The dataset the city had been working from captured only about 65 percent of local evictions, leaving roughly 19,000 sheriff actions out of the picture. It also treated a sheriff <b style="color:var(--red)">Restoration</b> as a tenant victory, when a Restoration is in fact the lockout itself, the moment a household loses its home. The old totals counted displacements as wins.</p>
+<p style="font-size:.92rem;line-height:1.66;color:var(--text);margin:12px 0 0">This dashboard is rebuilt straight from the source county court records. It recovers the missing actions, corrects the language, strips every tenant name, and runs free and self contained instead of on metered ArcGIS hosting that burned paid credits to stay online. Accurate and complete numbers matter because they decide which neighborhoods get attention and which protections get defended.</p>
+</body>
+</html>

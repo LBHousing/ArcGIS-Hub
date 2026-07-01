@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy impact on Long Beach evictions | LiBRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--surface:#1e2540;--surface-2:#161b30;--raise:#252d50;--border:rgba(255,255,255,.08);--border-2:rgba(255,255,255,.14);--text:#e8ebf5;--muted:#8b93b0;--faint:#5c6480;--blue:#276ADB;--yellow:#F7BA21;--red:#D2333F;--green:#34d399;--purple:#9d6fc7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--surface);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;padding:22px 24px}
+.kicker{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.55rem;letter-spacing:.3px}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.6}
+.note strong{color:var(--text);font-weight:600}
+.chart-wrap{position:relative;height:300px;margin-top:14px}
+/* funnel */
+.funnel-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:10px 0 20px}
+.funnel-noticed{font-family:'Instrument Serif',serif;font-size:1.5rem}
+.funnel-noticed b{color:var(--yellow);font-weight:400}
+.funnel-conv{font-size:.86rem;color:var(--muted)}
+.funnel-conv b{color:var(--text);font-weight:600}
+.funnel-bar{display:flex;height:62px;border-radius:10px;overflow:hidden;border:1px solid var(--border-2)}
+.fseg{display:flex;flex-direction:column;justify-content:center;padding:0 18px;color:#fff;min-width:0}
+.fseg.lock{background:linear-gradient(180deg,#d2333f,#a8202b)}
+.fseg.left{background:linear-gradient(180deg,#5b4a86,#43356b)}
+.fseg .n{font-family:'Instrument Serif',serif;font-size:1.55rem;line-height:1;white-space:nowrap}
+.fseg .l{font-size:.74rem;opacity:.92;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnel-foot{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.fchip{font-size:.76rem;color:var(--muted)}
+.fchip b{color:var(--text);font-weight:600}
+.legend-key{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;color:var(--muted)}
+.swatch{width:12px;height:12px;border-radius:3px;display:inline-block}
+/* table */
+.table-wrap{overflow-x:auto;max-height:520px;border-radius:10px;border:1px solid var(--border);margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+thead th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);text-align:left;padding:11px 13px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid var(--border-2)}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr:hover{background:rgba(255,255,255,.025)}
+.chip{display:inline-block;font-size:.66rem;font-weight:600;padding:2px 8px;border-radius:11px;background:rgba(39,106,219,.16);color:#7da9ec;border:1px solid rgba(39,106,219,.25)}
+.num-n{color:var(--yellow);font-weight:600}
+.num-l{color:var(--red);font-weight:600}
+.vol{height:6px;border-radius:3px;background:var(--yellow);opacity:.55;display:inline-block;vertical-align:middle}
+/* policy grid */
+.policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;margin-top:10px}
+.policy-grid p{font-size:.92rem;color:var(--text);line-height:1.66}
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin-top:14px}
+.stat{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:17px 19px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent,var(--blue))}
+.stat.y{--accent:var(--yellow)}.stat.r{--accent:var(--red)}.stat.b{--accent:var(--blue)}.stat.g{--accent:var(--green)}.stat.p{--accent:var(--purple)}
+.stat h3{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:'Instrument Serif',serif;font-size:2.1rem;line-height:1.05;margin-top:6px}
+.stat .s{font-size:.72rem;color:var(--muted);margin-top:4px}
+@media (max-width:620px){.policy-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body style="background:linear-gradient(180deg,#1e2540,#181d34)">
+<div class="kicker">Policy impact</div>
+<h2>What the timeline shows</h2>
+<div class="policy-grid">
+  <p>Evictions were already falling for fifteen years before any of the 2020 protections. Notices dropped about 35 percent between 2005 and 2019 and lockouts fell by roughly half. The steepest declines came in 2017 and 2018, before AB 1482 and the city's Just Cause ordinance, which points to the decade's economic recovery more than any single law.</p>
+  <p>The COVID moratorium broke that pattern. Notices fell 76 percent in a single year in 2020, and sheriff lockouts dropped to zero in April and May as the county moratorium and court closures took hold.</p>
+  <p>As protections wound down, evictions came roaring back. Notices nearly doubled in 2022 and rose another 60 percent in 2023, climbing back above where they stood before the pandemic. Lockouts spiked in March 2023, the very month the county moratorium expired.</p>
+  <p>In 2024 the two lines split apart. Landlords kept filing notices at close to normal levels, but only 41 of every 100 ended in a lockout, the lowest rate in twenty years. Some of that is because 2024 cases are still moving through the system, yet across the whole period fewer noticed households reach a formal lockout, falling from about 73 percent in 2005 to 60 percent by 2019. More residents are leaving, settling, or being pushed out before the sheriff ever returns.</p>
+</div>
+</body>
+</html>

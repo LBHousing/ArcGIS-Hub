@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Beach eviction trend | LiBRE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script>
+<style>
+:root{--bg:#0a0e1a;--surface:#1e2540;--surface-2:#161b30;--raise:#252d50;--border:rgba(255,255,255,.08);--border-2:rgba(255,255,255,.14);--text:#e8ebf5;--muted:#8b93b0;--faint:#5c6480;--blue:#276ADB;--yellow:#F7BA21;--red:#D2333F;--green:#34d399;--purple:#9d6fc7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--surface);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;padding:22px 24px}
+.kicker{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:1.55rem;letter-spacing:.3px}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.6}
+.note strong{color:var(--text);font-weight:600}
+.chart-wrap{position:relative;height:300px;margin-top:14px}
+/* funnel */
+.funnel-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:10px 0 20px}
+.funnel-noticed{font-family:'Instrument Serif',serif;font-size:1.5rem}
+.funnel-noticed b{color:var(--yellow);font-weight:400}
+.funnel-conv{font-size:.86rem;color:var(--muted)}
+.funnel-conv b{color:var(--text);font-weight:600}
+.funnel-bar{display:flex;height:62px;border-radius:10px;overflow:hidden;border:1px solid var(--border-2)}
+.fseg{display:flex;flex-direction:column;justify-content:center;padding:0 18px;color:#fff;min-width:0}
+.fseg.lock{background:linear-gradient(180deg,#d2333f,#a8202b)}
+.fseg.left{background:linear-gradient(180deg,#5b4a86,#43356b)}
+.fseg .n{font-family:'Instrument Serif',serif;font-size:1.55rem;line-height:1;white-space:nowrap}
+.fseg .l{font-size:.74rem;opacity:.92;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.funnel-foot{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.fchip{font-size:.76rem;color:var(--muted)}
+.fchip b{color:var(--text);font-weight:600}
+.legend-key{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;color:var(--muted)}
+.swatch{width:12px;height:12px;border-radius:3px;display:inline-block}
+/* table */
+.table-wrap{overflow-x:auto;max-height:520px;border-radius:10px;border:1px solid var(--border);margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+thead th{position:sticky;top:0;background:var(--surface-2);color:var(--muted);text-align:left;padding:11px 13px;font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:1px solid var(--border-2)}
+tbody td{padding:9px 13px;border-bottom:1px solid var(--border);white-space:nowrap}
+tbody tr:hover{background:rgba(255,255,255,.025)}
+.chip{display:inline-block;font-size:.66rem;font-weight:600;padding:2px 8px;border-radius:11px;background:rgba(39,106,219,.16);color:#7da9ec;border:1px solid rgba(39,106,219,.25)}
+.num-n{color:var(--yellow);font-weight:600}
+.num-l{color:var(--red);font-weight:600}
+.vol{height:6px;border-radius:3px;background:var(--yellow);opacity:.55;display:inline-block;vertical-align:middle}
+/* policy grid */
+.policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 34px;margin-top:10px}
+.policy-grid p{font-size:.92rem;color:var(--text);line-height:1.66}
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:13px;margin-top:14px}
+.stat{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:17px 19px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent,var(--blue))}
+.stat.y{--accent:var(--yellow)}.stat.r{--accent:var(--red)}.stat.b{--accent:var(--blue)}.stat.g{--accent:var(--green)}.stat.p{--accent:var(--purple)}
+.stat h3{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:'Instrument Serif',serif;font-size:2.1rem;line-height:1.05;margin-top:6px}
+.stat .s{font-size:.72rem;color:var(--muted);margin-top:4px}
+@media (max-width:620px){.policy-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="kicker">Annual trend</div>
+<h2>Notices versus lockouts</h2>
+<div class="chart-wrap" style="height:330px"><canvas id="trendChart"></canvas></div>
+<p class="note">Yellow marks notices to vacate and red marks completed sheriff lockouts, 2005 to 2025. The purple band is the county COVID moratorium, bracketed by the 2020 tenant protections and the moratorium ending in 2023.</p>
+<script>
+const C={bg:'#0a0e1a',surface:'#1e2540',text:'#e8ebf5',muted:'#8b93b0',blue:'#276ADB',yellow:'#F7BA21',red:'#D2333F',green:'#34d399',purple:'#9d6fc7',grid:'rgba(255,255,255,.06)'};
+const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmt=n=>(n||0).toLocaleString();
+Chart.defaults.color=C.muted;Chart.defaults.font.family="'Outfit',sans-serif";Chart.defaults.font.size=11;Chart.defaults.borderColor=C.grid;
+const D=[{"year": 2005, "notice_events": 2162, "lockout_events": 1575, "total_events": 3737, "cases_noticed": 2105, "cases_lockout": 1568, "unique_cases": 2170}, {"year": 2006, "notice_events": 2103, "lockout_events": 1444, "total_events": 3547, "cases_noticed": 2034, "cases_lockout": 1443, "unique_cases": 2066}, {"year": 2007, "notice_events": 2277, "lockout_events": 1556, "total_events": 3833, "cases_noticed": 2203, "cases_lockout": 1556, "unique_cases": 2235}, {"year": 2008, "notice_events": 2257, "lockout_events": 1484, "total_events": 3741, "cases_noticed": 2177, "cases_lockout": 1483, "unique_cases": 2244}, {"year": 2009, "notice_events": 2229, "lockout_events": 1467, "total_events": 3696, "cases_noticed": 2133, "cases_lockout": 1464, "unique_cases": 2211}, {"year": 2010, "notice_events": 2246, "lockout_events": 1416, "total_events": 3662, "cases_noticed": 2181, "cases_lockout": 1416, "unique_cases": 2232}, {"year": 2011, "notice_events": 2276, "lockout_events": 1359, "total_events": 3635, "cases_noticed": 2210, "cases_lockout": 1358, "unique_cases": 2282}, {"year": 2012, "notice_events": 2216, "lockout_events": 1460, "total_events": 3676, "cases_noticed": 2142, "cases_lockout": 1457, "unique_cases": 2219}, {"year": 2013, "notice_events": 2134, "lockout_events": 1234, "total_events": 3368, "cases_noticed": 2081, "cases_lockout": 1232, "unique_cases": 2143}, {"year": 2014, "notice_events": 2077, "lockout_events": 1096, "total_events": 3173, "cases_noticed": 2018, "cases_lockout": 1095, "unique_cases": 2094}, {"year": 2015, "notice_events": 1950, "lockout_events": 970, "total_events": 2920, "cases_noticed": 1899, "cases_lockout": 970, "unique_cases": 1957}, {"year": 2017, "notice_events": 1693, "lockout_events": 885, "total_events": 2578, "cases_noticed": 1637, "cases_lockout": 882, "unique_cases": 1684}, {"year": 2018, "notice_events": 1394, "lockout_events": 765, "total_events": 2159, "cases_noticed": 1357, "cases_lockout": 764, "unique_cases": 1400}, {"year": 2019, "notice_events": 1412, "lockout_events": 807, "total_events": 2219, "cases_noticed": 1363, "cases_lockout": 805, "unique_cases": 1397}, {"year": 2020, "notice_events": 344, "lockout_events": 215, "total_events": 559, "cases_noticed": 330, "cases_lockout": 215, "unique_cases": 381}, {"year": 2021, "notice_events": 493, "lockout_events": 346, "total_events": 839, "cases_noticed": 476, "cases_lockout": 346, "unique_cases": 493}, {"year": 2022, "notice_events": 970, "lockout_events": 586, "total_events": 1556, "cases_noticed": 939, "cases_lockout": 585, "unique_cases": 969}, {"year": 2023, "notice_events": 1549, "lockout_events": 864, "total_events": 2413, "cases_noticed": 1526, "cases_lockout": 864, "unique_cases": 1598}, {"year": 2024, "notice_events": 1442, "lockout_events": 596, "total_events": 2038, "cases_noticed": 1407, "cases_lockout": 593, "unique_cases": 1509}, {"year": 2025, "notice_events": 695, "lockout_events": 391, "total_events": 1086, "cases_noticed": 679, "cases_lockout": 391, "unique_cases": 792}];
+const d=[...D].sort((a,b)=>a.year-b.year);
+new Chart(document.getElementById('trendChart'),{type:'line',
+ data:{labels:d.map(x=>String(x.year)),datasets:[
+  {label:'Notices',data:d.map(x=>x.notice_events),borderColor:C.yellow,backgroundColor:'rgba(247,186,33,.10)',borderWidth:2.5,tension:.35,fill:true,pointRadius:2.5,pointHoverRadius:5},
+  {label:'Lockouts',data:d.map(x=>x.lockout_events),borderColor:C.red,backgroundColor:'rgba(210,51,63,.10)',borderWidth:2.5,tension:.35,fill:true,pointRadius:2.5,pointHoverRadius:5}]},
+ options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+  plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:8,padding:14}},
+   annotation:{annotations:{
+    covid:{type:'box',xMin:'2020',xMax:'2023',backgroundColor:'rgba(157,111,199,.09)',borderColor:'rgba(157,111,199,.28)',borderWidth:1,label:{display:true,content:'COVID moratorium',color:C.muted,font:{size:9},position:{x:'center',y:'center'}}},
+    laws:{type:'line',xMin:'2020',xMax:'2020',borderColor:'rgba(247,186,33,.6)',borderWidth:1.5,borderDash:[4,3],label:{display:true,content:'AB 1482 + Just Cause',color:C.yellow,font:{size:8},position:'end',backgroundColor:'rgba(10,14,26,.8)',padding:3}},
+    ended:{type:'line',xMin:'2023',xMax:'2023',borderColor:'rgba(210,51,63,.55)',borderWidth:1.5,borderDash:[4,3],label:{display:true,content:'moratorium ends',color:C.red,font:{size:8},position:'start',backgroundColor:'rgba(10,14,26,.8)',padding:3}}
+   }}},
+  scales:{x:{grid:{display:false}},y:{beginAtZero:true,grid:{color:C.grid}}}}});
+</script>
+</body>
+</html>
