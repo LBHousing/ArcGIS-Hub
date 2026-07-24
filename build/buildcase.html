@@ -62,6 +62,30 @@ h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64
 .rights .item{font-size:14px;color:#94a3b8;margin-bottom:6px}.rights .item .arr{color:#34d399;font-weight:700}.rights .item strong{color:#34d399}.rights .item a{color:#F7BA21;font-weight:600;text-decoration:none}
 .foot{font-size:12px;color:#64748b;line-height:1.6;margin-top:14px}
 @media(max-width:760px){.grid2,.grid3,.split,.mech,.tiles{grid-template-columns:1fr}.cw{height:260px}}
+
+/* fit: desktop elements enlarged + mobile compressed so both fill ~one height; sections spread to fill */
+html,body{height:1100px;overflow:hidden}
+.wrap{height:100%;display:flex;flex-direction:column;justify-content:space-between}
+@media(min-width:761px){
+  .card{padding:34px}
+  .card.ladder h3{font-size:18px}
+  .bar{margin-bottom:34px}
+  .ltrack{height:20px}
+  .bl-name{font-size:18px}
+  .bl-val{font-size:19px}
+  .lcap{font-size:14px;margin-top:9px}
+  .tile{padding:32px}
+  .tile .n{font-size:44px}
+  .tile .l{font-size:15px}
+  .kicker{padding:38px 34px}
+  .kicker p{font-size:19px;line-height:1.85}
+  .kicker .big{font-size:28px;margin-top:18px}
+}
+@media(max-width:760px){
+  .split,.mech,.grid3,.tiles,.gridm{grid-template-columns:1fr 1fr!important;gap:12px!important}
+  .card{padding:18px}.bar{margin-bottom:14px}
+  .kicker{padding:20px}.kicker p{font-size:14px;line-height:1.6}.kicker .big{font-size:19px}
+}
 </style></head><body><div class="wrap"><div class="card ladder" style="margin-bottom:16px"><h3 style="margin-bottom:18px">New units added by the top builders, 2018–2026</h3>
  <div class="bar"><div class="bl-top"><span class="bl-name">Market-rate / luxury developers</span><span class="bl-val pp">+848</span></div><div class="ltrack"><div class="lfill" id="lf1" style="background:#D2333F"></div></div><div class="lcap">Built without a dollar of public subsidy.</div></div>
  <div class="bar"><div class="bl-top"><span class="bl-name">Affordable &amp; nonprofit developers</span><span class="bl-val gn">+512</span></div><div class="ltrack"><div class="lfill" id="lf2" style="background:#34d399"></div></div><div class="lcap">Every project required city loans, tax credits, or county funds.</div></div>

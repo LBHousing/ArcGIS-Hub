@@ -62,6 +62,14 @@ h3{font-size:14px;font-weight:600;margin-bottom:2px}.cs{font-size:11px;color:#64
 .rights .item{font-size:14px;color:#94a3b8;margin-bottom:6px}.rights .item .arr{color:#34d399;font-weight:700}.rights .item strong{color:#34d399}.rights .item a{color:#F7BA21;font-weight:600;text-decoration:none}
 .foot{font-size:12px;color:#64748b;line-height:1.6;margin-top:14px}
 @media(max-width:760px){.grid2,.grid3,.split,.mech,.tiles{grid-template-columns:1fr}.cw{height:260px}}
+
+/* fixed-fit: one iframe height fills desktop AND mobile (no clip); chart scales */
+html,body{height:540px;overflow:hidden}
+body{padding-top:0;padding-bottom:0}
+.wrap{height:100%}
+.card{height:100%;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.cw{flex:1 1 auto;height:auto;min-height:0;width:100%}
+canvas{max-width:100%}
 </style></head><body><div class="wrap"><div class="card"><h3>Who holds Long Beach's housing, year by year</h3><div class="cs">Share of all dwelling units by owner type</div>
  <div class="legend"><span><i style="background:#64748b"></i>Individuals &amp; family trusts</span><span><i style="background:#276ADB"></i>LLCs</span><span><i style="background:#D2333F"></i>Other corporate</span><span><i style="background:#34d399"></i>Public &amp; civic</span></div>
  <div class="cw" style="height:340px"><canvas id="area"></canvas></div>

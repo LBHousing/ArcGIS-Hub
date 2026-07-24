@@ -1,3 +1,30 @@
+## ⚙️ Responsive fix — UPDATED iframe heights (Aug 2026)
+Each `build/*.html` now renders at a **fixed height that fills at both desktop and mobile** (no scripts — pure CSS). **Update each iframe's Height in the Hub to the new value below.** Charts scale to fill; text/card blocks enlarge on desktop / compress on mobile so one height fits both with no clipping.
+
+| iframe | old H | **new H** |
+|---|---|---|
+| `hero.html` | 540 | **683** |
+| `metric-bars.html` | 300 | **312** |
+| `charts-ownership.html` | 440 | **660** |
+| `formshift-tiles.html` | 150 | **162** |
+| `formshift-chart.html` | 540 | **540** *(unchanged)* |
+| `narr-shift.html` | 340 | **701** |
+| `metric-trusts.html` | 160 | **152** |
+| `narr-trusts.html` | 340 | **550** |
+| `concentration.html` | 520 | **907** |
+| `builders.html` | 1200 | **1388** |
+| `acquisition.html` | 1180 | **1425** |
+| `chart-top25.html` | 900 | **900** *(unchanged)* |
+| `buildcase.html` | 710 | **1100** |
+| `narr-protections.html` | 540 | **945** |
+| `charts-historical.html` | 420 | **660** |
+| `know-your-rights.html` | 390 | **544** |
+
+*(hero/marquee unchanged in role; marquee stays 56.)*
+
+---
+
+
 # Block the Cuts & Build LB: "Who Owns Long Beach" Hub Layout Guide
 
 **Updated build:** consolidated 2018-2026 Assessor analysis, dwelling-units only.
@@ -15,7 +42,7 @@ Heights below include a small buffer; nudge ±20px to taste.
 ### ROW 1 — Hero (iframe)
 ```
 URL:    BASEURL/build/hero.html
-Height: 540
+Height: 683
 ```
 
 ### ROW 2 — Marquee (iframe)
@@ -36,13 +63,13 @@ Height: 56
 ### ROW 4 — Metric bars, 6 owner types (iframe)
 ```
 URL:    BASEURL/build/metric-bars.html
-Height: 300
+Height: 312
 ```
 
 ### ROW 5 — Ownership charts: donut + nine-year change (iframe)
 ```
 URL:    BASEURL/build/charts-ownership.html
-Height: 440
+Height: 660
 ```
 
 ### ROW 6 — Divider (text card)
@@ -62,7 +89,7 @@ Height: 440
 ### ROW 8 — Form-shift stat tiles (iframe)
 ```
 URL:    BASEURL/build/formshift-tiles.html
-Height: 150
+Height: 162
 ```
 
 ### ROW 9 — Form-shift chart: 100% stacked area (iframe)
@@ -74,7 +101,7 @@ Height: 540
 ### ROW 10 — Shift narrative (iframe)
 ```
 URL:    BASEURL/build/narr-shift.html
-Height: 340
+Height: 701
 ```
 
 ### ROW 11 — Divider (text card)
@@ -94,13 +121,13 @@ Height: 340
 ### ROW 13 — Trust metric bars, 3 (iframe)
 ```
 URL:    BASEURL/build/metric-trusts.html
-Height: 160
+Height: 152
 ```
 
 ### ROW 14 — Trust narrative (iframe)
 ```
 URL:    BASEURL/build/narr-trusts.html
-Height: 340
+Height: 550
 ```
 
 ### ROW 15 — Divider (text card)
@@ -120,7 +147,7 @@ Height: 340
 ### ROW 17 — Concentration chart + narrative (iframe)
 ```
 URL:    BASEURL/build/concentration.html
-Height: 520
+Height: 907
 ```
 
 ### ROW 18 — Divider (text card)
@@ -140,7 +167,7 @@ Height: 520
 ### ROW 20 — The Builders: market/affordable split + 10 cards (iframe)
 ```
 URL:    BASEURL/build/builders.html
-Height: 1200
+Height: 1388
 ```
 
 ### ROW 21 — Divider (text card)
@@ -160,7 +187,7 @@ Height: 1200
 ### ROW 23 — The Quiet Acquisition: mechanism + acquirer cards + mobile-home parks (iframe)
 ```
 URL:    BASEURL/build/acquisition.html
-Height: 1180
+Height: 1425
 ```
 
 ### ROW 24 — Divider (text card)
@@ -199,7 +226,7 @@ Height: 900
 ### ROW 29 — Build case: ladder + RHNA tiles + CLT pitch (iframe)
 ```
 URL:    BASEURL/build/buildcase.html
-Height: 710
+Height: 1100
 ```
 
 ### ROW 30 — Divider (text card)
@@ -218,7 +245,7 @@ Height: 710
 ### ROW 32 — Protections narrative (iframe)
 ```
 URL:    BASEURL/build/narr-protections.html
-Height: 540
+Height: 945
 ```
 
 ### ROW 33 — Divider (text card)
@@ -238,7 +265,7 @@ Height: 540
 ### ROW 35 — Historical value charts, 2 (iframe)
 ```
 URL:    BASEURL/build/charts-historical.html
-Height: 420
+Height: 660
 ```
 
 ### ROW 36 — Divider (text card)
@@ -257,7 +284,7 @@ Height: 420
 ### ROW 38 — Know Your Rights resources (iframe)
 ```
 URL:    BASEURL/build/know-your-rights.html
-Height: 390
+Height: 544
 ```
 
 ---
