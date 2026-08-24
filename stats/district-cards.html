@@ -9,7 +9,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 28px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1100px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:1100px;margin:0 auto}
 .dc{background:#1e2540;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px 18px;transition:border-color .3s}
 .dc:hover{border-color:rgba(255,255,255,.12)}
 .dc-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.04);padding-bottom:8px}
@@ -27,8 +27,7 @@ body{font-family:'Outfit',sans-serif;background:#0a0e1a;color:#f1f5f9;padding:0 
 .dc-delta{flex:0 0 auto;font-size:9px;font-weight:600;text-align:right;min-width:50px}
 .up{color:#D2333F}.dn{color:#34d399}.nt{color:#64748b}
 .bl{color:#4d8ae8}.pu{color:#7B4EAF}.pp{color:#F7BA21}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}}
+@media(max-width:560px){.grid{gap:10px}.dc{padding:14px 14px}.dc-stat{min-width:56px}.dc-delta{min-width:44px}}
 </style>
 </head>
 <body>

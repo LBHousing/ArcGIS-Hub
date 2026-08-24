@@ -6,6 +6,29 @@ All Hub section backgrounds: `#0a0e1a`
 
 ---
 
+## ⚙️ Responsive fix — UPDATED iframe heights (Aug 2026)
+
+Each `stats/*.html` now **fits mobile with no clipping** and fills reasonably on desktop
+(charts flex-fill to any height; grids use consistent columns; narrative fits mobile + centers on desktop).
+**Update each iframe's Height in the Hub to the new value below.**
+
+| iframe | old H | **new H** | technique |
+|---|---|---|---|
+| `hero.html` | 800 | **960** | fills iframe height, blobs clipped, compact mobile stats |
+| `marquee.html` | 50 | **50** *(unchanged)* | — |
+| `metrics.html` | 540 | **1165** | 2-col at all widths (was 4→2); converges mobile/desktop |
+| `charts-all-renters.html` | 400 | **480** | flex-fill charts (shrink/grow to fit one height) |
+| `charts-seniors.html` | 400 | **480** | flex-fill charts |
+| `charts-lowincome.html` | 400 | **480** | flex-fill charts |
+| `marquee-districts.html` | 50 | **50** *(unchanged)* | — |
+| `district-bars.html` | 780 | **820** | flex-fill charts |
+| `district-cards.html` | 620 | **1165** | 2-col at all widths (was 3→2→1) |
+| `narr-analysis.html` | 1400 | **2610** | capped reading width + fit mobile, centered card on desktop |
+
+Verified (Playwright, 390px mobile & 1000px desktop): **0 clips, 0 horizontal overflow.**
+
+---
+
 ## Row-by-Row Assembly
 
 ### ROW 1 — Hero (GitHub iframe)
