@@ -2,6 +2,10 @@
 
 Interactive housing cost burden charts for the [LiBRE District Statistics](https://weare-libre.hub.arcgis.com/pages/district-statistics) Hub page.
 
+> ⚠️ **Before editing any page's iframes, read [`RESPONSIVE_IFRAMES.md`](RESPONSIVE_IFRAMES.md)** —
+> the site-wide standard for mobile/desktop iframe heights. Wrong heights = mobile gaps / desktop
+> clipping. Every card needs BOTH a Mobile Height and a Desktop Height set in the Hub.
+
 ## Setup
 
 1. Push this repo to GitHub
