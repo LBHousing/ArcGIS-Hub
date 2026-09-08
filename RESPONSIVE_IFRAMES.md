@@ -210,6 +210,12 @@ Boxed rows → measured at 360 / 1140.
 | origins | 1280 | 590 | |
 | updates-bar | 240 | 240 | |
 
+### Code Enforcement — `/pages/code-enforcement` (NEW) → repo `code-enforcement/index.html`
+One **full-app iframe** (interactive: density heatmap + live filters + owner leaderboard). NOT split into cards — the filters cross-link every panel, so it must be a single embed. URL: `BASEURL/code-enforcement/`.
+| card | M | D | notes |
+|---|---|---|---|
+| code-enforcement (whole dashboard) | 3040 | 1630 | one iframe; scroll-wheel zoom disabled so page scroll works over the map; leaderboard scrolls internally |
+
 ---
 
 ## Checklist when adding or editing any card

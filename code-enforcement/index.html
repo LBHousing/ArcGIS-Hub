@@ -220,7 +220,7 @@ function buildControls(){
     [...cc.children].forEach(x=>x.classList.add('on'));render();};
 }
 function initMap(districts){
-  map=L.map('map',{zoomControl:true,attributionControl:false,preferCanvas:true}).setView([33.804,-118.16],11.5);
+  map=L.map('map',{zoomControl:true,attributionControl:false,preferCanvas:true,scrollWheelZoom:false}).setView([33.804,-118.16],11.5);
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:19}).addTo(map);
   if(districts){window._dLayer=L.geoJSON(districts,{style:{color:'#4d8ae8',weight:1.2,opacity:.4,fill:false}}).addTo(map);}
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,pane:'shadowPane'}).addTo(map);
