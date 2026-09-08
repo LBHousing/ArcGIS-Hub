@@ -95,12 +95,14 @@ footer{margin-top:22px;color:var(--faint);font-size:12px;line-height:1.6;text-al
     <div>
       <p class="kick">LiBRE · Long Beach</p>
       <h1>Code Violations, 2008&ndash;2026</h1>
-      <p class="sub">Every logged code-enforcement violation, mapped as density &mdash; and ranked by the owners behind them. Individual residents are never pinpointed; only the concentration shows.</p>
+      <p class="sub">Confirmed code violations across Long Beach, mapped as density and ranked by the owners behind them. The city logs every complaint &mdash; two-thirds found no violation, so those are off by default; flip <b>+ Complaints</b> to include them. Individual residents are never pinpointed; only concentration shows.</p>
     </div>
     <div class="stats" id="statband"></div>
   </div>
 
   <div class="controls">
+    <div class="cg"><label>Records</label><div class="seg" id="vSeg">
+      <button data-inc="0" class="on">Violations</button><button data-inc="1">+ Complaints</button></div></div>
     <div class="cg"><label>Years</label><div style="display:flex;gap:6px;align-items:center">
       <select id="yFrom"></select><span style="color:var(--faint)">to</span><select id="yTo"></select></div></div>
     <div class="cg"><label>Owner</label><div class="seg" id="ogSeg">
@@ -118,7 +120,7 @@ footer{margin-top:22px;color:var(--faint);font-size:12px;line-height:1.6;text-al
       <div class="cs">Density heatmap &mdash; ~110m grid, no exact addresses. Redder = more violations.</div>
       <div id="map"></div>
       <div class="readout">
-        <span><b id="shownN">0</b> violations shown · <b id="shownP">100%</b> of all records</span>
+        <span><b id="shownN">0</b> <span id="shownNoun">violations</span> shown · <b id="shownP">100%</b> of all records</span>
         <span class="legend">fewer <span class="legbar"></span> more</span>
       </div>
     </div>
@@ -149,7 +151,8 @@ footer{margin-top:22px;color:var(--faint);font-size:12px;line-height:1.6;text-al
 
   <footer>
     Source: City of Long Beach code-enforcement records (Infor public portal), scraped &amp; anonymized by LiBRE, Aug 2026 ·
-    142,233 violations · 99.9% linked to a parcel &amp; owner · personal names removed, entity names retained.
+    142,233 service requests, of which 48,418 are confirmed violations (the rest inspected with no violation found) ·
+    99.9% linked to a parcel &amp; owner · personal names removed, entity names retained.
   </footer>
 </div>
 
@@ -160,7 +163,7 @@ const CATCOLORS={"Uncategorized":"#64748b","Property Maintenance":"#4d8ae8","Oth
   "Animals":"#7ba7e8","Nuisance":"#d0637f"};
 const OGCOLOR={E:"#e8636d",I:"#4d8ae8",P:"#a884e8"};
 const OGLABEL={E:"Entities (LLC/Corp/LP)",I:"Individuals & trusts",P:"Public / civic"};
-const state={yFrom:2008,yTo:2026,og:"all",dist:"all",cats:new Set(Object.keys(CATCOLORS))};
+const state={yFrom:2008,yTo:2026,og:"all",dist:"all",incC:false,cats:new Set(Object.keys(CATCOLORS))};
 let HEAT=[], OWNERS=[], SUMMARY={}, map, heatLayer, ownChart, trendChart, catChart;
 const $=id=>document.getElementById(id);
 const fmt=n=>n.toLocaleString();
@@ -184,21 +187,28 @@ Promise.all([
   SUMMARY=sum;
   // heat: lat,lon,year,cat,og,d,n
   HEAT=heatTxt.trim().split(/\r?\n/).slice(1).map(l=>{const p=l.split(',');
-    return {lat:+p[0],lon:+p[1],y:+p[2],c:p[3],og:p[4],d:p[5],n:+p[6]};});
-  // owners
-  OWNERS=parseCSV(ownTxt).map(r=>({name:r[0],type:r[1],v:+r[2],b:+r[3],vpb:+r[4],cat:r[5],
-    dist:r[6],dc:[1,2,3,4,5,6,7,8,9].map(i=>+r[6+i])}));
-  buildStatBand(); buildControls(); initMap(districts); render();
+    return {lat:+p[0],lon:+p[1],y:+p[2],c:p[3],og:p[4],d:p[5],v:+p[6],n:+p[7]};});
+  // owners: owner,type,violations,complaints,buildings,vpb,top_cat,top_district,dv1..9,dt1..9
+  OWNERS=parseCSV(ownTxt).map(r=>({name:r[0],type:r[1],v:+r[2],c0:+r[3],b:+r[4],vpb:+r[5],cat:r[6],dist:r[7],
+    dv:[0,1,2,3,4,5,6,7,8].map(i=>+r[8+i]), dt:[0,1,2,3,4,5,6,7,8].map(i=>+r[17+i])}));
+  updateStatband(); buildControls(); initMap(districts); render();
   const ld=$('loading'); ld.style.opacity=0; setTimeout(()=>ld.remove(),400);
 }).catch(e=>{$('loading').textContent='Could not load data: '+e.message;});
 
-function buildStatBand(){
-  $('statband').innerHTML=[
-    ['v', fmt(SUMMARY.total), 'violations'],
-    ['v b', fmt(SUMMARY.parcels), 'properties'],
-    ['v r', SUMMARY.entity_share+'%', 'entity-owned'],
-    ['v', fmt(SUMMARY.entity_owners), 'named entities'],
-  ].map(([c,v,l])=>`<div class="stat"><div class="${c}">${v}</div><div class="l">${l}</div></div>`).join('');
+function updateStatband(){
+  const s=SUMMARY;
+  const tiles = state.incC ? [
+    ['v', fmt(s.total), 'service requests'],
+    ['v b', fmt(s.violations), 'found a violation'],
+    ['v', Math.round(100*s.violations/s.total)+'%', 'violation rate'],
+    ['v', fmt(s.complaints), 'no violation found'],
+  ] : [
+    ['v', fmt(s.violations), 'confirmed violations'],
+    ['v b', fmt(s.viol_parcels), 'properties'],
+    ['v r', s.entity_share_viol+'%', 'entity-owned'],
+    ['v', fmt(s.entity_owners_viol), 'named entities'],
+  ];
+  $('statband').innerHTML=tiles.map(([c,v,l])=>`<div class="stat"><div class="${c}">${v}</div><div class="l">${l}</div></div>`).join('');
 }
 function buildControls(){
   const yf=$('yFrom'),yt=$('yTo');
@@ -211,6 +221,8 @@ function buildControls(){
     state.dist=e.target.dataset.d;render();zoomDistrict();}};
   $('ogSeg').onclick=e=>{if(e.target.dataset.og){[...$('ogSeg').children].forEach(x=>x.classList.remove('on'));
     e.target.classList.add('on');state.og=e.target.dataset.og;render();}};
+  $('vSeg').onclick=e=>{if(e.target.dataset.inc!==undefined){[...$('vSeg').children].forEach(x=>x.classList.remove('on'));
+    e.target.classList.add('on');state.incC=e.target.dataset.inc==='1';updateStatband();render();}};
   const cc=$('catChips');
   Object.keys(CATCOLORS).forEach(c=>{const b=document.createElement('button');b.className='chip on';b.dataset.c=c;
     b.innerHTML=`<span class="d" style="background:${CATCOLORS[c]}"></span>${c}`;cc.appendChild(b);});
@@ -235,7 +247,8 @@ function zoomDistrict(){
 }
 function match(r){
   return r.y>=state.yFrom&&r.y<=state.yTo && state.cats.has(r.c)
-    && (state.og==='all'||r.og===state.og) && (state.dist==='all'||r.d===state.dist);
+    && (state.og==='all'||r.og===state.og) && (state.dist==='all'||r.d===state.dist)
+    && (state.incC || r.v===1);
 }
 function render(){
   const pts=[]; let shown=0; const yr={},cat={},og={E:0,I:0,P:0}; const cells=new Set();
@@ -248,23 +261,29 @@ function render(){
   const scale=max>0?1/Math.max(6,max*0.55):1;
   heatLayer.setLatLngs(pts.map(p=>[p[0],p[1],Math.min(1,p[2]*scale)]));
   $('shownN').textContent=fmt(shown);
+  $('shownNoun').textContent=state.incC?'requests':'violations';
   $('shownP').textContent=(SUMMARY.total?Math.round(100*shown/SUMMARY.total):100)+'%';
   renderLeaderboard(); renderCharts(yr,cat,og);
 }
 function renderLeaderboard(){
-  const byDist=state.dist!=='all';
+  const byDist=state.dist!=='all', inc=state.incC;
   let list=OWNERS.filter(o=>state.og==='all'||ogGroup(o.type)===state.og);
-  list=list.map(o=>({...o, cur: byDist? o.dc[+state.dist-1] : o.v})).filter(o=>o.cur>0);
+  list=list.map(o=>{
+    const cur = byDist ? (inc ? o.dt[+state.dist-1] : o.dv[+state.dist-1])
+                       : (inc ? (o.v+o.c0) : o.v);
+    return {...o, cur};
+  }).filter(o=>o.cur>0);
   list.sort((a,b)=>b.cur-a.cur); list=list.slice(0,60);
   $('lbScope').textContent=byDist?('district '+state.dist):'all districts';
-  $('lbSub').textContent=byDist?`Named entities ranked by violations in District ${state.dist}.`
-    :'Named entities ranked by total violations. Individuals stay anonymous.';
+  $('lbSub').textContent=(inc?'Named entities ranked by all service requests':'Named entities ranked by confirmed violations')
+    +(byDist?` in District ${state.dist}.`:'. Individuals stay anonymous.');
+  const lab=byDist?('in D'+state.dist):(inc?'requests':'violations');
   $('leaderboard').innerHTML=list.length?list.map((o,i)=>{
     const tcls='t-'+o.type.split(/[ /]/)[0];
     return `<div class="orow"><div class="orank">${i+1}</div>
       <div><div class="oname" title="${o.name}">${o.name}</div>
-        <div class="ometa"><span class="otype ${tcls}">${shortType(o.type)}</span>${o.b} bldg${o.b>1?'s':''} · ${o.vpb}/bldg</div></div>
-      <div class="oval"><div class="n">${fmt(o.cur)}</div><div class="b">${byDist?'in D'+state.dist:'total'}</div></div></div>`;
+        <div class="ometa"><span class="otype ${tcls}">${shortType(o.type)}</span>${o.b} bldg${o.b>1?'s':''} · ${o.vpb} viol/bldg</div></div>
+      <div class="oval"><div class="n">${fmt(o.cur)}</div><div class="b">${lab}</div></div></div>`;
   }).join(''):'<div style="padding:20px;color:var(--faint);font-size:13px;text-align:center">No named entities match these filters.</div>';
 }
 function ogGroup(t){return (t==='LLC'||t==='Corporation'||t==='Limited Partnership')?'E':(t==='Public/Civic'?'P':'I');}
