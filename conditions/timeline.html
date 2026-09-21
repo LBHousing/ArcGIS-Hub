@@ -41,7 +41,24 @@ h2{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;margin-bo
 .callout{background:rgba(210,51,63,.06);border-left:3px solid #D2333F;padding:14px 18px;border-radius:0 8px 8px 0;margin-top:24px;font-size:14px;color:#94a3b8}
 .callout strong{color:#f1f5f9}
 @media(max-width:600px){.map-frame{height:350px}}
+/* ?m=1 mobile mode — forces a compact phone layout regardless of the width Hub renders it at */
+html.m body{padding:0 12px}
+html.m .card{padding:22px 18px}
+html.m h2{font-size:23px;margin-bottom:14px}
+html.m .map-frame{height:300px}
+html.m .map-header{flex-direction:column;align-items:flex-start;gap:4px}
+html.m .map-header h3{font-size:13.5px}
+html.m .map-legend{gap:8px 14px;font-size:11px;padding:12px 16px}
+html.m .timeline{padding-left:24px;margin:16px 0}
+html.m .timeline::before{left:9px}
+html.m .tl-item{margin-bottom:18px}
+html.m .tl-item::before{left:-24px}
+html.m .tl-year{font-size:11px}
+html.m .tl-text{font-size:13.5px;line-height:1.58}
+html.m .tl-text ul{margin-top:6px}
+html.m .callout{font-size:12.5px;padding:12px 15px;margin-top:16px}
 </style>
+<script>if(location.search.indexOf('m=1')>-1)document.documentElement.classList.add('m')</script>
 </head>
 <body>
 <div class="wrapper">
