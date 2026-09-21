@@ -86,7 +86,12 @@ footer{margin-top:22px;color:var(--faint);font-size:12px;line-height:1.6;text-al
 .loading{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;
   font-family:'Instrument Serif',serif;font-size:22px;color:var(--soft);z-index:9999;transition:opacity .4s}
 @media(max-width:900px){.grid{grid-template-columns:1fr}.rail{order:2}#map{height:440px}.stats{margin-left:0;width:100%}}
+/* embed mode (?embed): hide the internal title block — the Hub hero carries it — but keep the live stat band */
+html.embed .head>div:first-child{display:none}
+html.embed #statband{margin-left:0}
+html.embed .wrap{padding:14px 20px 40px}
 </style>
+<script>if(location.search.indexOf('embed')>-1)document.documentElement.classList.add('embed')</script>
 </head>
 <body>
 <div class="loading" id="loading">Loading 142,233 violations…</div>
