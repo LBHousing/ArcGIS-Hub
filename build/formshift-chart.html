@@ -70,7 +70,8 @@ body{padding-top:0;padding-bottom:0}
 .card{height:100%;display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .cw{flex:1 1 auto;height:auto;min-height:0;width:100%}
 canvas{max-width:100%}
-</style></head><body><div class="wrap"><div class="card"><h3>Who holds Long Beach's housing, year by year</h3><div class="cs">Share of all dwelling units by owner type</div>
+</style><script>if(location.search.indexOf('m=1')>-1){document.documentElement.classList.add('m');var l=document.createElement('link');l.rel='stylesheet';l.href='https://lbhousing.github.io/ArcGIS-Hub/mobile.css';document.head.appendChild(l);}</script>
+</head><body><div class="wrap"><div class="card"><h3>Who holds Long Beach's housing, year by year</h3><div class="cs">Share of all dwelling units by owner type</div>
  <div class="legend"><span><i style="background:#64748b"></i>Individuals &amp; family trusts</span><span><i style="background:#276ADB"></i>LLCs</span><span><i style="background:#D2333F"></i>Other corporate</span><span><i style="background:#34d399"></i>Public &amp; civic</span></div>
  <div class="cw" style="height:340px"><canvas id="area"></canvas></div>
  <p class="foot">Individuals and family trusts are shown as one band: the Assessor reclassified many trust-held homes back to "individual" in the 2025 roll — a labeling change, not a real transfer. Combining them removes that artifact.</p></div></div><script>Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';Chart.defaults.font.family="'Outfit',sans-serif";var S={"individual": [80.76, 79.93, 78.91, 81.93, 77.47, 76.35, 75.64, 74.55, 73.57], "llc": [11.77, 12.46, 13.16, 11.6, 14.31, 15.31, 16.02, 16.71, 17.77], "othercorp": [6.97, 7.06, 7.4, 5.54, 7.64, 7.84, 7.81, 8.21, 8.13], "civic": [0.5, 0.55, 0.53, 0.93, 0.58, 0.5, 0.53, 0.54, 0.53]},Y=[2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];

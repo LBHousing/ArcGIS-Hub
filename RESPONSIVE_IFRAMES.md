@@ -119,6 +119,28 @@ const FILE = 'c:/Users/Zoro/Documents/LiBRE/ArcGIS-Hub/<folder>/<card>.html';
 
 ---
 
+## Mobile mode — `?m=1` + shared `mobile.css`
+
+Every component now carries a one-line hook: loaded with **`?m=1`** it adds `html.m` and pulls in
+`https://lbhousing.github.io/ArcGIS-Hub/mobile.css`, a shared sheet that tightens spacing and type for
+phones. It is scoped to `html.m`, so the normal (desktop) URL is untouched.
+
+**Use it via the Hub "Mobile URL override" field:**
+- Default URL → `…/frame.html` + **desktop** height
+- Mobile URL override → `…/frame.html?m=1` + **mobile** height
+
+Hub serves the compact one on phones, the full one on desktop. Measured effect: text-heavy frames get
+**~30–43% shorter** (mission, origins, narr-violations, narr-analysis), grids/cards ~5–13%, already-compact
+grids ~neutral.
+
+**When NOT to use it:** charts and the `build/` (CTPA) frames are flex-fill — they adapt to any height on
+their own. Don't give them a `?m=1` mobile URL; just use the same URL with the mobile height. `mobile.css`
+only tightens natural-flow text/grid components.
+
+To adjust the compaction globally, edit the single `mobile.css` — no per-component changes.
+
+---
+
 ## Per-page height tables (measured Aug 2026)
 
 `M` = Mobile Height, `D` = Desktop Height (pixels to enter in the Hub). `flex` = flex-fill chart

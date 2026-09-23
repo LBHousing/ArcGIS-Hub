@@ -71,7 +71,8 @@ html,body{height:907px;overflow:hidden}
 .card{flex:1 1 auto;display:flex;flex-direction:column;min-height:0;overflow:hidden}
 .cw{flex:1 1 auto!important;height:auto!important;min-height:0}
 canvas{max-width:100%}
-</style></head><body><div class="wrap"><div class="grid2">
+</style><script>if(location.search.indexOf('m=1')>-1){document.documentElement.classList.add('m');var l=document.createElement('link');l.rel='stylesheet';l.href='https://lbhousing.github.io/ArcGIS-Hub/mobile.css';document.head.appendChild(l);}</script>
+</head><body><div class="wrap"><div class="grid2">
  <div class="card"><h3>Where entity-owned units sit (2026)</h3><div class="cs">% of all entity-owned units, by how many parcels the owner holds</div><div class="cw"><canvas id="conc"></canvas></div></div>
  <div class="narr"><h2>Concentration, not consolidation</h2>
   <p>It would be easy to assume a few mega-landlords are swallowing the city. The data says otherwise: the combined share held by the top 10, top 50, and top 200 owners barely moved from 2018 to 2026.</p>

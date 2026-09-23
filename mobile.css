@@ -1,0 +1,31 @@
+/* mobile.css — LiBRE shared mobile-compaction sheet.
+   Activated only when a component is loaded with ?m=1 (adds html.m).
+   Used via the Hub "Mobile URL override" field: point mobile to <frame>.html?m=1
+   The component's own responsive layout already applies at phone width; this
+   sheet just tightens spacing and type so the mobile iframe is shorter and cleaner.
+   Everything is scoped to html.m, so it is inert on the normal (desktop) URL. */
+
+html.m body{padding-left:14px!important;padding-right:14px!important}
+
+/* headings */
+html.m h1{font-size:clamp(26px,8.5vw,34px)!important;line-height:1.08!important;margin-bottom:14px!important}
+html.m h2{font-size:23px!important;line-height:1.15!important;margin-bottom:14px!important}
+html.m h3{font-size:15px!important;margin-top:20px!important;margin-bottom:8px!important}
+
+/* body text */
+html.m p,html.m li,html.m td,html.m .tl-text,html.m .narr p{font-size:13.5px!important;line-height:1.58!important}
+
+/* big content cards only — trim generous desktop padding.
+   NOT compact grid items (.m, .dc, .tile) — those are already tight and would grow. */
+html.m .card{padding:20px 18px!important}
+
+/* highlight / callout boxes */
+html.m .hl,html.m [class*="callout"],html.m .hlbox,html.m .kicker,html.m .mhp{
+  padding:12px 15px!important;font-size:13px!important;margin:14px 0!important}
+
+/* section spacing */
+html.m section{margin-top:26px!important}
+html.m .wrap,html.m .wrapper,html.m .inner{padding-top:6px!important}
+
+/* embedded sub-maps / media a touch shorter on phones */
+html.m .map-frame,html.m iframe.map-frame{height:300px!important}

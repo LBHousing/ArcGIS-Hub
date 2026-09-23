@@ -73,7 +73,8 @@ body{padding-top:0;padding-bottom:0}
 canvas{max-width:100%}
 @media(max-width:760px){.grid2{grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:14px}.cw{height:auto}}
 @media(max-width:520px){.grid2{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.cw{height:auto}.card{padding:18px}}
-</style></head><body><div class="wrap"><div class="grid2">
+</style><script>if(location.search.indexOf('m=1')>-1){document.documentElement.classList.add('m');var l=document.createElement('link');l.rel='stylesheet';l.href='https://lbhousing.github.io/ArcGIS-Hub/mobile.css';document.head.appendChild(l);}</script>
+</head><body><div class="wrap"><div class="grid2">
  <div class="card"><h3>Total assessed value (2018–2026)</h3><div class="cs">$41.6B → $63.3B</div><div class="cw"><canvas id="hval"></canvas></div></div>
  <div class="card"><h3>LLC-held value (2018–2026)</h3><div class="cs">$3.11B → $7.59B — up 144%</div><div class="cw"><canvas id="hllc"></canvas></div></div></div></div><script>Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='rgba(255,255,255,0.06)';Chart.defaults.font.family="'Outfit',sans-serif";var Y=[2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 function line(id,data,color){new Chart(document.getElementById(id),{type:'line',data:{labels:Y,datasets:[{data:data,borderColor:color,backgroundColor:color.replace('rgb','rgba').replace(')',',0.07)'),fill:true,tension:.3,pointRadius:2,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return '$'+c.parsed.y.toFixed(1)+'B'}}}},scales:{x:{ticks:{font:{size:10}},grid:{display:false}},y:{ticks:{font:{size:10},callback:function(v){return '$'+v+'B'}},grid:{color:'rgba(255,255,255,0.04)'}}}}})}
